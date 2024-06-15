@@ -1,4 +1,4 @@
-export interface CompatibilityItem {
+export interface ContactItem {
   icon: string;
   title: string;
   url: string;

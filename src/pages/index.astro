@@ -1,11 +1,11 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
 import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
+import About from "~/components/about.astro";
+import Contact from "~/components/contact.astro";
+import Project from "~/components/project.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
@@ -23,7 +23,7 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Astro Landing Page</title>
+    <title>AstralSeal</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
@@ -42,7 +42,7 @@ const description =
         document.documentElement.dataset.theme = themeSaved;
       } else {
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
+          "(prefers-color-scheme: light)",
         ).matches;
         document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
       }
@@ -64,10 +64,9 @@ const description =
     <Header />
     <Splash />
     <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
+      <Project />
+      <About />
+      <Contact /> 
     </div>
     <Footer />
   </body>

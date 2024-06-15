@@ -1,0 +1,42 @@
+---
+import ContactList from "~/components/contact-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { ContactItem } from "~/types";
+import { Icon } from 'astro-icon/components'
+
+
+const staff: Array<ContactItem> = [
+  {
+    title: "AstralAria",
+    icon: "mdi:people",
+    url: "#contact",
+  },
+  {
+    title: "Rayedge",
+    icon: "mdi:people",
+    url: "#contact",
+  },
+  {
+    title: "SchrödingerSeal",
+    icon: "mdi:people",
+    url: "#contact",
+  },
+  {
+    title: "coregameHD",
+    icon: "mdi:people",
+    url: "#contact",
+  },
+];
+
+---
+
+<ContentSection title="Contact Us" id="contact">
+  <Fragment slot="lead">
+    We'd love to hear from you! <br/>Please drop us an email <br/> <span class="text-primary">astralseal2023@gmail.com</span>
+  </Fragment>
+  <ContactList
+    items={staff}
+    title="Staff"
+    url="https://docs.astro.build/guides/deploy/"
+  />
+</ContentSection>

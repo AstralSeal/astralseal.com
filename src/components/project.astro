@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import ProjectCard from "~/components/project-card.astro";
+
+const featuredSites = await getCollection(
+  "project",
+  ({ data }) => "featured" in data,
+);
+const orderedSites = featuredSites.sort(
+  (a, b) => a.data.featured! - b.data.featured!,
+);
+---
+
+<ContentSection title="Projects" id="projects">
+  <Fragment slot="lead">
+    <span class="text-primary">Explore</span> all visual novels
+  </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {orderedSites.map((site) => <ProjectCard site={site} />)}
+    </div>
+    <!--<p class="text-right text-sm">
+      <a class="text-primary" href="https://astro.build/showcase/">
+        ...and more &rarr;
+      </a>
+    </p>-->
+  </div>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
+    <a
+      href="https://store.steampowered.com/app/2414020"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:steam" class="size-8" />
+      <span>Steam</span>
+    </a>
+    <a
+      href="https://vndb.org/p18185"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:web" class="size-8" />
+      <span>VNDB</span>
+    </a>
+    <a
+      href="#projects"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon name="mdi:arrow-right" class="size-8" />
+      <span class="gradient-text">All Projects</span>
+    </a>
+  </div>
+</ContentSection>
