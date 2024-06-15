@@ -1,0 +1,12 @@
+---
+export function getStaticPaths() {
+  return [
+    {params: {projects: 'cafeaulait'}},
+    {params: {projects: 'rover'}},
+    {params: {projects: 'spot'}},
+  ];
+}
+
+const { projects } = Astro.params;
+---
+<div>Project name: {projects}!</div>
