@@ -1,0 +1,226 @@
+---
+import MemaryLayout from '../../../layouts/MemaryLayout.astro'
+---
+<MemaryLayout title="Home | Memary: Memory of the nameless one">
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="../../" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="cafeaulait/img/logo.png" alt=""> -->
+        <h1 class="sitename">AstralSeal</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#character">Character</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <!--<li><a href="/projects/cafeaulait/special">Special</a></li>-->
+          <li><a href="#product">Product</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a href="https://store.steampowered.com/app/2742620" class="btn-getstarted" style="background:black;"><i
+          class="bi bi-steam"></i> Steam</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+      <!--<img src="img/cover3.jpg" srcset="img/cover2.jpg 1000w">-->
+      <img src="img/main01.png" alt="coverimage">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100">Memary: Memory of the nameless one</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Mystery visual novel with puzzles, and cat!</p>
+          </div>
+          <div class="col-lg-5 gy-4">
+            <a class="btn btn-lg btn-warning" href="https://store.steampowered.com/app/2742620" data-aos="fade-up"
+              data-aos-delay="300">Download (Free)</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Story Section -->
+    <section id="story" class="services section">
+      <!-- Story Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Story</h2>
+        <p>เนื้อเรื่องย่อ</p>
+      </div><!-- End Story Title -->
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-10 col-xl-8 mx-auto text-center mainstory" data-aos="fade-up" data-aos-delay="100">
+            <p>You who have no memory find yourself in the nameless mansion.
+              You don’t remember the reason why you stray in this mansion. 
+              You have no destination until you meet mysterious cat that reside in this mansion.</p><br />
+            <p>“I will guide you to your memory”</p><br />
+            <p>The mysterious cat offer help to guide you. The room with puzzle awaits you and when you solve it, 
+              you will regain your memory. To reclaim your identity, you choose to follow mysterious cat 
+              and solve all puzzle in the rooms of question.
+              What await you in your destination is the truth.</p><br />
+            <p><b>
+              The unbearable truth about yourself that will never change.
+            </b></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Story Section -->
+
+    <!-- Character Section -->
+    <section id="character" class="services section">
+      <!-- Character Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Character</h2>
+        <p>ตัวละคร</p>
+      </div><!-- End Character Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/intro_cat.png" alt="cover" data-aos="fade-in"></div>
+              <div class="swiper-slide"><img src="img/intro_x.png" alt="cover" data-aos="fade-in"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Character Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="portfolio section">
+      <!-- Gallery Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p>ภาพตัวอย่างจากเกม</p>
+      </div><!-- End Gallery Title -->
+      <div class="container">
+        <div class="container" data-aos="fade-up">
+          <div class="row g-4">
+            <div class="col-6 col-xl-4">
+              <img src="img/main.png" class="img-fluid glightbox" alt="">
+            </div>
+            <div class="col-6 col-xl-4">
+              <img src="img/gallery/ss2.jpg" class="img-fluid glightbox" alt="">
+            </div>
+            <div class="col-6 col-xl-4">
+              <img src="img/gallery/ss3.jpg" class="img-fluid glightbox" alt="">
+            </div>
+            <div class="col-6 col-xl-4">
+              <img src="img/gallery/ss4.jpg" class="img-fluid glightbox" alt="">
+            </div>
+            <div class="col-6 col-xl-4">
+              <img src="img/gallery/ss5.jpg" class="img-fluid glightbox" alt="">
+            </div>
+            <div class="col-6 col-xl-4">
+              <img src="img/gallery/ss6.jpg" class="img-fluid glightbox" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Gallery Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+      <img src="img/main02.png" alt="">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Official Answer</h3>
+              <p>Warning: The answer might contain spoiler.</p>
+              <a class="cta-btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188">View Answer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Call To Action Section -->
+
+    <!-- Product Section -->
+    <section id="product" class="features section">
+      <!-- Product Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Product</h2>
+        <p>ข้อมูลเกี่ยวกับเกม</p>
+      </div><!-- End Product Title -->
+      <div class="container">
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <dl>
+              <dt>Title</dt>
+              <dd>Memary: Memory of the nameless one</dd>
+              <dt>Language</dt>
+              <dd>English, Thai (ภาษาไทย)</dd>
+              <dt>Release Date</dt>
+              <dd>02/02/2024</dd>
+              <dt>Platform</dt>
+              <dd>Windows (Steam)</span></dd>
+              <dt>Price</dt>
+              <dd>Free</span></dd>
+            </dl>
+            <a href="https://store.steampowered.com/app/2742620" class="btn btn-dark"><i class="bi bi-steam"></i>
+              Steam</a>
+            <a href="https://vndb.org/v49382" class="btn btn-warning">VNDB</a>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="image-stack">
+              <img src="img/logo.png" alt="" class="stack-front">
+              <img src="img/main03.png" alt="" class="stack-back">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Product Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>คำถามที่ถามบ่อย </span><strong>FAQ</strong></h3>
+              <p>
+                หากมีคำถามอื่นนอกเหนือจากนี้ โปรดติดต่อที่ Facebook: AstralSeal
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>Please give me answer key</span></h3>
+                <div class="faq-content">
+                  <p>Sure, here it is - https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>Question is a bit difficult, I cannot find the answer.</span></h3>
+                <div class="faq-content">
+                  <p>You can skip all questions. No penality for the player.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>Can I translate this game to xxx language?</span></h3>
+                <div class="faq-content">
+                  <p>Yes, you can create custom fan-translation patch. We are appreciated.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Faq Section -->
+  </main>
+</MemaryLayout>

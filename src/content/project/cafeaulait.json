@@ -1,6 +1,6 @@
 {
   "title": "The Picture of Café au lait",
   "image": "/src/content/project/_images/cafeaulait.jpg",
-  "url": "http://localhost:4321/projects/cafeaulait/",
+  "url": "https://astraltest02.vercel.app/projects/cafeaulait/",
   "featured": 1
 }

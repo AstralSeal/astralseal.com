@@ -1,0 +1,12 @@
+.mainstory {
+    font-size: 125%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .img-responsive {
+      display: none;
+    }
+    .img-responsive.mobile {
+      display: block;
+    }
+  }
