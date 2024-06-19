@@ -2,14 +2,22 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 //import astronautImage from "~/assets/astronaut.png";
-import sealImage from "~/assets/seal2.png";
+import sealImage from "~/assets/seal/Kenny.webp";
 import astralsealLogo from "~/assets/astralseal_logo.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
 
-const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
+const widths = [450, 700];
+const sizes = "(min-width: 640px) 38vw, 56vw";
+
+const sealImages = [
+  "~/assets/seal/Kingseal.png",
+  "~/assets/seal/Kenny.webp",
+  "~/assets/seal/Kenny02.webp",
+  "~/assets/seal/Kenny03.webp",
+  "~/assets/seal/Kenny04.webp",
+];
 ---
 
 <section class="relative h-full bg-black">
