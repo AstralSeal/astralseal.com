@@ -7,6 +7,7 @@ import type { ContactItem } from "~/types";
 export interface Props {
   items: Array<ContactItem>;
   title: string;
+  role: string;
   url: string;
 }
 
@@ -24,9 +25,10 @@ const { items, title, url } = Astro.props;
       {
         items.map((item) => (
           <li>
-            <a class="flex flex-col items-center gap-2" href={item.url}>
+            <a class="flex flex-col items-center" href={item.url}>
               <Icon class="size-12" name={item.icon} />
               <span>{item.title}</span>
+              <p class="text-sm" style="color:gray;">{item.role}</p>
             </a>
           </li>
         ))
@@ -34,6 +36,6 @@ const { items, title, url } = Astro.props;
     </ul>
   </div>
   <p class="text-right text-sm">
-    <a class="text-primary" href={url}> ...and more &rarr;</a>
+    <a class="text-primary" href={url}> Direct Message (Facebook Inbox) &rarr;</a>
   </p>
 </div>

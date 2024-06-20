@@ -1,6 +1,7 @@
 export interface ContactItem {
   icon: string;
   title: string;
+  role: string;
   url: string;
 }
 
