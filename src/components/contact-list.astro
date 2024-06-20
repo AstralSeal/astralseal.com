@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import seal01 from '../assets/seal/Kenny.webp';
 import { Icon } from "astro-icon/components";
 import type { ContactItem } from "~/types";
 
@@ -11,14 +13,14 @@ export interface Props {
 const { items, title, url } = Astro.props;
 ---
 
-<div class="w-full max-w-6xl space-y-2">
-  <div class="relative border border-default bg-offset px-6 pb-4 pt-8">
+<div class="max-w-6xl space-y-2">
+  <div class="relative border border-default bg-offset px-2 pb-4 pt-8">
     <h3
       class="absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs"
     >
       {title}
     </h3>
-    <ul class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-6">
+    <ul class="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4">
       {
         items.map((item) => (
           <li>
