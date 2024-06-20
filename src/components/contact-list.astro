@@ -7,7 +7,6 @@ import type { ContactItem } from "~/types";
 export interface Props {
   items: Array<ContactItem>;
   title: string;
-  role: string;
   url: string;
 }
 
@@ -25,7 +24,7 @@ const { items, title, url } = Astro.props;
       {
         items.map((item) => (
           <li>
-            <a class="flex flex-col items-center" href={item.url}>
+            <a class="flex flex-col items-center" href={item.url} target="_blank" rel="noopener noreferrer" >
               <Icon class="size-12" name={item.icon} />
               <span>{item.title}</span>
               <p class="text-sm" style="color:gray;">{item.role}</p>
