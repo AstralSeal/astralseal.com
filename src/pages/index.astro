@@ -12,7 +12,7 @@ import "~/styles/index.css";
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "AstralSeal is a visual novel doujin circle debut in 2023. Aiming to create innovative project and cute and funny characters with strong comedic elements.";
 ---
 
 <!doctype html>
@@ -20,14 +20,16 @@ const description =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/astralseal_logo.png" />
     <meta name="generator" content={generator} />
 
-    <title>AstralSeal</title>
+    <title>AstralSeal Homepage</title>
     <meta name="description" content={description} />
+    <meta content="#6366f1" name="theme-color" />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="AstralSeal Homepage" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
