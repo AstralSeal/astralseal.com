@@ -64,3 +64,13 @@ dt {
 .buttonrow {
   margin-top: 1.25rem;
 }
+
+.btn-purple {
+  background-color: #832491;
+  color: #ffffff;
+}
+
+.btn-purple:hover {
+  background-color:#9431a4;
+  color: #ffffff;
+}
