@@ -10,3 +10,11 @@
     display: block;
   }
 }
+
+dt {
+  margin-top: 8px;
+}
+
+.buttonrow {
+  margin-top: 1.25rem;
+}

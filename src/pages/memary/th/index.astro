@@ -1,12 +1,12 @@
 ---
-import MemaryLayout from '../../layouts/MemaryLayout.astro'
+import MemaryLayout from '../../../layouts/MemaryLayout.astro'
 ---
 <MemaryLayout title="Home | Memary: Memory of the nameless one">
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="../../" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="../../../" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">AstralSeal</h1>
       </a>
       <nav id="navmenu" class="navmenu">
@@ -16,7 +16,7 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
           <li><a href="#character">Character</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#product">Product</a></li>
-          <li><a href="/memary/th">ภาษาไทย</a></li>
+          <li><a href="/memary">English</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -34,7 +34,7 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
         <div class="row">
           <div class="col-lg-10">
             <h2 data-aos="fade-up" data-aos-delay="100">Memary: Memory of the nameless one</h2>
-            <p data-aos="fade-up" data-aos-delay="200">Mystery visual novel with puzzles, and cat!</p>
+            <p data-aos="fade-up" data-aos-delay="200">วิชวลโนเวลสุดระทึกที่มาพร้อมกับปริศนา...... และแมว!</p>
           </div>
           <div class="col-lg-5 gy-4">
             <a class="btn btn-lg btn-warning" href="https://store.steampowered.com/app/2742620" data-aos="fade-up"
@@ -49,20 +49,19 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
       <!-- Story Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Story</h2>
+        <p>เนื้อเรื่องย่อ</p>
       </div><!-- End Story Title -->
       <div class="container">
         <div class="row gy-4">
           <div class="col-10 col-xl-8 mx-auto text-center mainstory" data-aos="fade-up" data-aos-delay="100">
-            <p>You who have no memory find yourself in the nameless mansion.
-              You don’t remember the reason why you stray in this mansion. 
-              You have no destination until you meet mysterious cat that reside in this mansion.</p><br />
-            <p>“I will guide you to your memory”</p><br />
-            <p>The mysterious cat offer help to guide you. The room with puzzle awaits you and when you solve it, 
-              you will regain your memory. To reclaim your identity, you choose to follow mysterious cat 
-              and solve all puzzle in the rooms of question.
-              What await you in your destination is the truth.</p><br />
+            <p>คุณตื่นขึ้นท่ามกลางคฤหาสน์ลึกลับโดยไร้ซึ่งความทรงจำ
+              ทำไมคุณถึงหลงทางอยู่ในสถานที่แห่งนี้? คุณเดินไปอย่างไร้จุดหมายปลายทางจนกระทั่งคุณพบกับแมวลึกลับ</p><br />
+            <p>“ฉันจะนำทางเธอไปพบกับความทรงจำ”</p><br />
+            <p>มันนำทางคุณไปยังห้องลึกลับที่มีปริศนามากมายรอคุณอยู่ ทุกครั้งที่คุณค้นพบคำตอบ
+              คุณจะได้รับความทรงจำของคุณคืนมา เพื่อที่จะกลับมาเป็นตัวของตัวเองอีกครั้ง 
+              คุณเลือกที่จะเดินตามแมวลึกลับและไขปริศนาทั้งหมด</p><br />
             <p><b>
-              The unbearable truth about yourself that will never change.
+              สิ่งที่รอคุณอยู่ตรงปลายทางคือความจริง ความจริงอันโหดร้ายเกี่ยวกับตัวคุณที่ไม่มีวันถูกเปลี่ยนแปลง
             </b></p>
           </div>
         </div>
@@ -74,6 +73,7 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
       <!-- Character Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Character</h2>
+        <p>ตัวละคร</p>
       </div><!-- End Character Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
@@ -95,6 +95,7 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
       <!-- Gallery Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Gallery</h2>
+        <p>ภาพตัวอย่างจากเกม</p>
       </div><!-- End Gallery Title -->
       <div class="container">
         <div class="container" data-aos="fade-up">
@@ -129,9 +130,9 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-10">
             <div class="text-center">
-              <h3>Official Answer</h3>
-              <p>Warning: The answer might contain spoiler.</p>
-              <a class="cta-btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188">View Answer</a>
+              <h3>เฉลยคำตอบ</h3>
+              <p>คำเตือน: คำตอบอาจสปอยเนื้อหาในเกม</p>
+              <a class="cta-btn" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188">ดูเฉลยคำตอบที่นี่</a>
             </div>
           </div>
         </div>
@@ -143,20 +144,21 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
       <!-- Product Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Product</h2>
+        <p>ข้อมูลเกี่ยวกับเกม</p>
       </div><!-- End Product Title -->
       <div class="container">
         <div class="row gy-4 align-items-center features-item">
           <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
             <dl>
-              <dt>Title</dt>
+              <dt>ชื่อเกม</dt>
               <dd>Memary: Memory of the nameless one</dd>
-              <dt>Language</dt>
+              <dt>ภาษา</dt>
               <dd>English, Thai (ภาษาไทย)</dd>
-              <dt>Release Date</dt>
+              <dt>วันที่จัดจำหน่าย</dt>
               <dd>02/02/2024</dd>
-              <dt>Platform</dt>
+              <dt>ระบบ</dt>
               <dd>Windows (Steam)</span></dd>
-              <dt>Price</dt>
+              <dt>ราคา</dt>
               <dd>Free</span></dd>
             </dl>
             <div class="buttonrow">
@@ -182,26 +184,26 @@ import MemaryLayout from '../../layouts/MemaryLayout.astro'
         <div class="row gy-4">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="content px-xl-5">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <h3><span>คำถามที่ถามบ่อย </span><strong>FAQ</strong></h3>
               <p>
-                Can't find answer? Please contact us on Facebook: AstralSeal
+                หากมีคำถามอื่นนอกเหนือจากนี้ โปรดติดต่อที่ Facebook: AstralSeal
               </p>
             </div>
           </div>
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
             <div class="faq-container">
               <div class="faq-item faq-active">
-                <h3><span class="num">1.</span> <span>Please give me answer key</span></h3>
+                <h3><span class="num">1.</span> <span>ขอคำตอบหน่อย</span></h3>
                 <div class="faq-content">
-                  <p>Sure, here it is - https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188</p>
+                  <p>ได้เลย - https://steamcommunity.com/sharedfiles/filedetails/?id=3159814188</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3><span class="num">2.</span> <span>Question is a bit difficult, I cannot find the answer.</span></h3>
+                <h3><span class="num">2.</span> <span>คำถามยากไป คิดคำตอบไม่ออก</span></h3>
                 <div class="faq-content">
-                  <p>You can skip all questions. No penality for the player.</p>
+                  <p>คุณสามารถกดปุ่มข้าม (Skip) ได้นะ ไม่มีบทลงโทษใดๆ ทั้งสิ้น</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->

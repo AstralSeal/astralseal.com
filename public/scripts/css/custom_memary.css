@@ -41,3 +41,11 @@
   height: 100%;
   object-fit: cover;
 }
+
+dt {
+  margin-top: 8px;
+}
+
+.buttonrow {
+  margin-top: 1.25rem;
+}
