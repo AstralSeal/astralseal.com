@@ -22,6 +22,10 @@
   padding: 10px 0;
 }
 
+.img-responsive.mobile {
+  display: none;
+}
+
 @media only screen and (max-device-width: 480px) {
   .img-responsive {
     display: none;
@@ -73,4 +77,12 @@ dt {
 .btn-purple:hover {
   background-color:#9431a4;
   color: #ffffff;
+}
+
+.productlogo {
+  position: absolute;
+  top: 52vh; 
+  left: 0px;
+  width: 48vw; 
+  z-index: 10;
 }

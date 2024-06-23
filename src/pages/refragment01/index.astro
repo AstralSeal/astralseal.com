@@ -1,7 +1,7 @@
 ---
-import MemaryLayout from '../../layouts/Refragment01Layout.astro'
+import Refragment01Layout from '../../layouts/Refragment01Layout.astro'
 ---
-<MemaryLayout title="Home | Re:Fragment ~Absolute Ambition~">
+<Refragment01Layout title="Home | Re:Fragment ~Absolute Ambition~">
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -32,8 +32,10 @@ import MemaryLayout from '../../layouts/Refragment01Layout.astro'
     <!-- Hero Section -->
     <section id="home" class="hero section">
       <!--<img src="/images/memary/cover3.jpg" srcset="/images/memary/cover2.jpg 1000w">-->
-      <img src="/images/refragment01/key1_logo.png" alt="coverimage">
+      <img src="/images/refragment01/key1.png" alt="coverimage" class="img-responsive">
+      <img src="/images/refragment01/library_capsule.png" alt="coverimage" class="img-responsive mobile">
     </section><!-- /Hero Section -->
+    <img src="/images/refragment01/library_logo.png" alt="logo" class="img-responsive productlogo">
 
     <!-- Story Section -->
     <section id="story" class="services section">
@@ -93,49 +95,91 @@ import MemaryLayout from '../../layouts/Refragment01Layout.astro'
       </div>
     </section><!-- /Story Section -->
 
-    <section id="character" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Character</h2>
-        <p>WIP: Work in progress. Please wait</p>
-      </div><!-- End Section Title -->
-      <span class="imgchr" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" data-aos="fade-up" data-aos-delay="100">
-        <img src="/images/refragment01/chara_reika2.png" alt="">
-        <img src="/images/refragment01/chara_yuno2.png" alt="">
-        <img src="/images/refragment01/chara_maya2.png" alt="">
-      </span>
-      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-4">
-            <div class="info-item" data-aos="fade" data-aos-delay="200">
-              <h3>Kuromiya Reika</h3>
-              <h2>Flawless Student Council President</h2>
-              <img src="/images/refragment01/chr_reika.jpg" alt="">
-              <p>Lorem Ipsum</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="info-item" data-aos="fade" data-aos-delay="200">
-              <h3>Kuromiya Reika</h3>
-              <h2>Flawless Student Council President</h2>
-              <img src="/images/refragment01/chr_reika.jpg" alt="">
-              <p>Lorem Ipsum</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="info-item" data-aos="fade" data-aos-delay="200">
-              <h3>Kuromiya Reika</h3>
-              <h2>Flawless Student Council President</h2>
-              <img src="/images/refragment01/chr_reika.jpg" alt="">
-              <p>Lorem Ipsum</p>
-            </div>
-          </div>
-          </div>
-      </div>-->
+        <!-- Character Section -->
+        <section id="character" class="recent-posts section">
 
-    </section><!-- /Character Section -->
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Character</h2>
+          </div><!-- End Section Title -->
     
+          <div class="container">
+            <div class="row gy-4">
+              <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <article>
+    
+                  <div class="post-img">
+                    <img src="/images/refragment01/chara_reika2.png" alt="" class="img-fluid">
+                  </div>
+    
+                  <p class="post-category">Flawless Student Council President</p>
+                  <h2 class="title">
+                    <a href="#">Kuromiya Reika</a>
+                  </h2>
+                  <div class="d-flex align-items-center">
+                    <div class="post-meta">
+                      <p>Silverseal Private Academy student council president. </p><br/>
+                      <p>She excels at every aspect, boasting an outstanding academic performance 
+                        with top grades for every subject in her year except Math, 
+                        where she is beaten by our protagonist Yuuma.</p>
+                    </div>
+                  </div>
+    
+                </article>
+              </div><!-- End post list item -->
+    
+              <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <article>
+    
+                  <div class="post-img">
+                    <img src="/images/refragment01/chara_yuno2.png" alt="" class="img-fluid">
+                  </div>
+    
+                  <p class="post-category">Avid Mobile Gacha Gamer Little Sister</p>
+                  <h2 class="title">
+                    <a href="#">Kusaka Yuno</a>
+                  </h2>
+                  <div class="d-flex align-items-center">
+                    <div class="post-meta">
+                      <p>The protagonist's little sister.</p><br/>
+                      <p>She studies remotely through a homeschooling system and doesn't 
+                        attend school like other kids her age due to her frail health. 
+                        Because of this, she is extremely shy and anxious when meeting 
+                        strangers, except for her brother.</p>
+                    </div>
+                  </div>
+    
+                </article>
+              </div><!-- End post list item -->
+    
+              <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <article>
+    
+                  <div class="post-img">
+                    <img src="/images/refragment01/chara_maya2.png" alt="" class="img-fluid">
+                  </div>
+    
+                  <p class="post-category">Kind-hearted and Trendy Girl</p>
+                  <h2 class="title">
+                    <a href="#">Shirasaka Maya</a>
+                  </h2>
+                  <div class="d-flex align-items-center">
+                    <div class="post-meta">
+                      <p>The protagonist's classmate.</p><br/>
+                      <p>She is friendly and gets along effortlessly 
+                        with everyone. With her attractive figure and charm, 
+                        she undoubtedly always becomes the center of attention.</p>
+                    </div>
+                  </div>
+                </article>
+              </div><!-- End post list item -->
+            </div><!-- End recent posts list -->
+          </div>
+          <!-- <div class="buttonrow text-center" data-aos="fade-up" data-aos-delay="300"> 
+          <a href="#" class="btn btn-lg btn-purple">Read more <i class="bi bi-arrow-right"></i></a>
+          </div>-->
+        </section><!-- /Character Section -->
 
     <!-- Gallery Section -->
     <section id="gallery" class="portfolio section">
@@ -261,4 +305,4 @@ import MemaryLayout from '../../layouts/Refragment01Layout.astro'
     
 
   </main>
-</MemaryLayout>
+</Refragment01Layout>
