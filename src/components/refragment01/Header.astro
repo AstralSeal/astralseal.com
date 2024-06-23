@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+const description = "Re:Fragment ~Absolute Ambition~ is the story of ambitious teenagers confronted with a reality far removed from their expectations. Will they be able to navigate a life that sabotages them at every turn? It all depends on “you”.";
 ---
 
 <!DOCTYPE html>
@@ -9,11 +10,12 @@ const { title } = Astro.props;
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>{title}</title>
-  <meta content="" name="description">
+  <meta content={description} name="description">
   <meta content="visualnovel, visual novel, eroge, astralseal, game, games" name="keywords">
   <meta content="#832491" name="theme-color" />
   <meta property="og:title" content={title} />
-  <meta property="og:image" content="/images/memary/cover.jpg" />
+  <meta property="og:image" content="/images/refragment01/key1_logo.png" />
+  <meta property="og:description" content={description} />
 
   <!-- Favicons -->
   <link href="/images/refragment01/favicon.png" rel="icon">

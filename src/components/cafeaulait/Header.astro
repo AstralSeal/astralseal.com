@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+const description = "The picture of café au lait is a visual novel game that makes the players feel immersed in story and character. They will experience the story in the game through the first-person perspective of the main character in the story named Takagi.";
 ---
 
 <!DOCTYPE html>
@@ -9,11 +10,12 @@ const { title } = Astro.props;
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>{title}</title>
-  <meta content="The picture of café au lait is a visual novel game that makes the players feel immersed in story and character. They will experience the story in the game through the first-person perspective of the main character in the story named Takagi." name="description">
+  <meta content={description} name="description">
   <meta content="visualnovel, visual novel, eroge, astralseal, game, games" name="keywords">
   <meta content="#e84545" name="theme-color" />
   <meta property="og:title" content={title} />
   <meta property="og:image" content="/images/cafeaulait/cover.jpg" />
+  <meta property="og:description" content={description} />
 
   <!-- Favicons -->
   <link href="/images/cafeaulait/favicon.jpeg" rel="icon">
