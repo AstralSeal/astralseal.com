@@ -2270,7 +2270,7 @@ section,
   font-size: 20px;
   font-weight: 700;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 4px 0;
 }
 
 .blog-posts .title a {
@@ -2376,7 +2376,7 @@ section,
 .blog-details .content blockquote {
   overflow: hidden;
   background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  padding: 60px;
+  padding: 20px;
   position: relative;
   text-align: center;
   margin: 20px 0;
@@ -2388,7 +2388,7 @@ section,
   margin-bottom: 0;
   font-style: italic;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .blog-details .content blockquote:after {
