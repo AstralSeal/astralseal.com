@@ -6,5 +6,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://astralseal.com/",
-  integrations: [tailwind(), icon(), sitemap()]
+  integrations: [tailwind(), icon(), sitemap()],
+  devToolbar: {
+    enabled: false
+  }
 });
