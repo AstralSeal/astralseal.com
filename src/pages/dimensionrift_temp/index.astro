@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Summer Pockets — MAL‑style Template</title>
+  <meta name="description" content="A single‑file, MyAnimeList‑inspired anime page template. Not affiliated with MAL." />
+  <style>
+    /* -----------------------------
+       Minimal Reset & Base
+    ----------------------------- */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:#1f2937;background:#eef1f5}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    /* -----------------------------
+       Theme Tokens (tweak freely)
+    ----------------------------- */
+    :root{
+      --mal-blue:#2e51a2;              /* primary brand-ish */
+      --mal-blue-2:#24458e;            /* darker for hover */
+      --mal-accent:#3b82f6;            /* secondary accents */
+      --fg:#111827;                    /* text */
+      --muted:#6b7280;                 /* secondary text */
+      --bg:#eef1f5;                    /* page bg */
+      --card:#ffffff;                  /* card bg */
+      --line:#e5e7eb;                  /* borders */
+      --chip:#f3f4f6;                  /* subtle chip */
+      --shadow:0 6px 18px rgba(2,6,23,.08);
+      --radius:14px;
+      --radius-sm:10px;
+      --container:1200px;
+    }
+
+    /* -----------------------------
+       Header
+    ----------------------------- */
+    .topbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,var(--mal-blue),#2a4a95)}
+    .topbar-inner{max-width:var(--container);margin:auto;display:flex;gap:16px;align-items:center;padding:12px 16px;color:#fff}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo-badge{width:28px;height:28px;border-radius:7px;background:#fff;color:var(--mal-blue);display:grid;place-items:center;font-weight:900}
+
+    .nav{display:flex;gap:12px;margin-left:8px}
+    .nav a{padding:8px 10px;border-radius:8px;color:#e8eeff;font-weight:600;opacity:.95}
+    .nav a:hover{background:rgba(255,255,255,.12)}
+
+    .search{margin-left:auto;display:flex;align-items:center;gap:10px}
+    .search input{width:340px;max-width:50vw;border:0;border-radius:999px;padding:10px 14px;background:#fff;color:#111;outline:3px solid transparent}
+    .search input:focus{outline-color:rgba(255,255,255,.35)}
+    .userbox{display:flex;align-items:center;gap:10px}
+    .user-ava{width:32px;height:32px;border-radius:999px;background:#fff;display:grid;place-items:center;color:var(--mal-blue);font-weight:800}
+
+    .subnav{background:#1e3a8a;color:#c7d2fe}
+    .subnav-inner{max-width:var(--container);margin:auto;padding:8px 16px;display:flex;gap:8px;align-items:center;font-size:14px}
+    .crumbs a{color:#c7d2fe}
+    .crumbs span{opacity:.6}
+
+    /* -----------------------------
+       Layout
+    ----------------------------- */
+    .container{max-width:var(--container);margin:18px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:300px 1fr;gap:18px}
+    @media (max-width: 980px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card-pad{padding:16px}
+    .card-title{font-weight:800;margin:0 0 8px}
+    .hr{height:1px;background:var(--line);margin:12px 0}
+
+    /* -----------------------------
+       Left Column
+    ----------------------------- */
+    .cover{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+    .score{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}
+    .score-main{grid-column:span 2;display:flex;align-items:center;gap:14px}
+    .score-n{font-size:34px;font-weight:900;color:var(--mal-blue)}
+    .score-meta{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:12px;color:#374151}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-weight:700;box-shadow:0 1px 0 rgba(0,0,0,.02);cursor:pointer}
+    .btn.primary{background:var(--mal-blue);color:#fff;border-color:transparent}
+    .btn.primary:hover{background:var(--mal-blue-2)}
+    .btn:active{transform:translateY(1px)}
+
+    .info-table{width:100%;border-collapse:separate;border-spacing:0 8px}
+    .info-table th{width:38%;text-align:left;color:var(--muted);font-weight:700;padding-right:8px;vertical-align:top}
+    .info-table td{color:#111}
+
+    /* -----------------------------
+       Right Column
+    ----------------------------- */
+    .titlebar{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .title{margin:0;font-size:28px;font-weight:900}
+    .subtitle{margin:2px 0 0;color:var(--muted);font-size:14px}
+
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px}
+
+    .tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-top:16px}
+    .tab{padding:10px 12px;font-weight:700;color:#334155;border-bottom:3px solid transparent;cursor:pointer}
+    .tab[aria-selected="true"]{color:var(--mal-blue);border-color:var(--mal-blue)}
+
+    .panel{display:none;padding:16px 0}
+    .panel.active{display:block}
+
+    /* -----------------------------
+       Components inside panels
+    ----------------------------- */
+    .synopsis{white-space:pre-line}
+    .readmore{color:var(--mal-blue);font-weight:800;cursor:pointer}
+
+    .char-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    @media (min-width: 860px){.char-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .char{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
+    .char img{width:64px;height:64px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
+    .char .name{font-weight:800}
+    .char .role{color:var(--muted);font-size:12px}
+
+    .staff-list{display:grid;gap:8px}
+    .staff-item{display:flex;justify-content:space-between;padding:8px 10px;border:1px dashed var(--line);border-radius:10px}
+    .staff-role{color:var(--muted)}
+
+    .episodes{width:100%;border-collapse:collapse}
+    .episodes th,.episodes td{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+    .episodes th{background:#f8fafc}
+
+    .review{display:grid;gap:8px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+    .review-head{display:flex;gap:10px;align-items:center}
+    .avatar{width:36px;height:36px;border-radius:999px;background:#e5e7eb;display:grid;place-items:center;font-weight:900;color:#374151}
+    .stars{letter-spacing:1px}
+
+    .reco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .reco{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+    .reco .meta{padding:8px}
+    .reco .t{font-weight:800}
+
+    /* -----------------------------
+       Footer
+    ----------------------------- */
+    footer{margin:40px 0 20px;color:#6b7280;font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a href="#" class="logo" aria-label="Home">
+        <span class="logo-badge" aria-hidden>AN</span>
+        <span>AnimeNote</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#">Anime</a>
+        <a href="#">Manga</a>
+        <a href="#">Community</a>
+        <a href="#">Industry</a>
+      </nav>
+      <div class="search" role="search">
+        <input type="search" placeholder="Search anime, manga, people…" aria-label="Search" />
+      </div>
+      <div class="userbox">
+        <div class="user-ava" title="Guest">G</div>
+      </div>
+    </div>
+    <div class="subnav">
+      <div class="subnav-inner">
+        <div class="crumbs" aria-label="Breadcrumb">
+          <a href="#">Anime</a>
+          <span>›</span>
+          <a href="#">Summer Pockets (Example)</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <div class="grid">
+      <!-- Left Column -->
+      <aside aria-label="Sidebar">
+        <div class="card card-pad">
+          <div class="cover" aria-label="Cover image">
+            <!-- Inline SVG placeholder poster (replace href with your image) -->
+            <img alt="Cover" src="data:image/svg+xml;utf8,
+              %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 450 640'%3E
+              %3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E
+                %3Cstop offset='0' stop-color='%232e51a2'/%3E
+                %3Cstop offset='1' stop-color='%233b82f6'/%3E
+              %3C/linearGradient%3E%3C/defs%3E
+              %3Crect width='450' height='640' rx='18' fill='url(%23g)'/%3E
+              %3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Arial' font-size='26'%3EANIME POSTER%3C/text%3E
+            %3C/svg%3E"/>
+          </div>
+          <div class="hr"></div>
+          <div class="score">
+            <div class="score-main">
+              <div class="score-n" aria-label="Score">8.4</div>
+              <div>
+                <div><strong>Very Good</strong></div>
+                <div class="stars" aria-hidden>★ ★ ★ ★ ☆</div>
+              </div>
+            </div>
+            <div class="badge" title="Rank">Rank #112</div>
+            <div class="badge" title="Popularity">Popularity #987</div>
+            <div class="badge" title="Members">Members 124,321</div>
+            <div class="badge" title="Favorites">Favorites 2,301</div>
+          </div>
+          <div class="hr"></div>
+          <div class="actions" aria-label="Quick actions">
+            <div class="dropdown">
+              <button class="btn primary" id="addListBtn" aria-expanded="false" aria-controls="addListMenu">Add to List ▾</button>
+              <div id="addListMenu" class="card" style="display:none;position:absolute;z-index:20;padding:6px;border-radius:12px">
+                <button class="btn" data-status="Watching">Watching</button>
+                <button class="btn" data-status="Completed">Completed</button>
+                <button class="btn" data-status="On-Hold">On-Hold</button>
+                <button class="btn" data-status="Dropped">Dropped</button>
+                <button class="btn" data-status="Plan to Watch">Plan to Watch</button>
+              </div>
+            </div>
+            <button class="btn" title="Add to favorites">♡ Favorite</button>
+          </div>
+        </div>
+
+        <div class="card card-pad" style="margin-top:12px">
+          <h3 class="card-title">Alternative Titles</h3>
+          <table class="info-table">
+            <tr><th>English</th><td>Summer Pockets (Example)</td></tr>
+            <tr><th>Japanese</th><td>サマーポケッツ</td></tr>
+            <tr><th>Synonyms</th><td>Summer Pockets RB</td></tr>
+          </table>
+          <div class="hr"></div>
+          <h3 class="card-title">Information</h3>
+          <table class="info-table">
+            <tr><th>Type</th><td>TV</td></tr>
+            <tr><th>Episodes</th><td>12</td></tr>
+            <tr><th>Status</th><td>Not yet aired</td></tr>
+            <tr><th>Aired</th><td>Jul 202X to Sep 202X</td></tr>
+            <tr><th>Premiered</th><td>Summer 202X</td></tr>
+            <tr><th>Broadcast</th><td>Fridays at 23:30 (JST)</td></tr>
+            <tr><th>Producers</th><td>Example Studio, Example Works</td></tr>
+            <tr><th>Licensors</th><td>—</td></tr>
+            <tr><th>Studios</th><td>Studio Placeholder</td></tr>
+            <tr><th>Source</th><td>Visual novel</td></tr>
+            <tr><th>Genres</th><td>Drama, Romance, Slice of Life</td></tr>
+            <tr><th>Themes</th><td>Memory, Summer, Island</td></tr>
+            <tr><th>Demographic</th><td>Seinen</td></tr>
+            <tr><th>Duration</th><td>24 min. per ep.</td></tr>
+            <tr><th>Rating</th><td>PG-13</td></tr>
+          </table>
+        </div>
+
+        <div class="card card-pad" style="margin-top:12px">
+          <h3 class="card-title">Statistics</h3>
+          <table class="info-table">
+            <tr><th>Score</th><td>8.40 (scored by 34,567 users)</td></tr>
+            <tr><th>Ranked</th><td>#112</td></tr>
+            <tr><th>Popularity</th><td>#987</td></tr>
+            <tr><th>Members</th><td>124,321</td></tr>
+            <tr><th>Favorites</th><td>2,301</td></tr>
+          </table>
+        </div>
+      </aside>
+
+      <!-- Right Column -->
+      <section>
+        <div class="card card-pad">
+          <div class="titlebar">
+            <div>
+              <h1 class="title">Summer Pockets <span style="font-weight:400;color:var(--muted);font-size:.8em">(Example)</span></h1>
+              <p class="subtitle">TV • 12 eps • Studio Placeholder • Summer 202X</p>
+              <div class="tags" aria-label="Tags">
+                <span class="chip">Drama</span>
+                <span class="chip">Romance</span>
+                <span class="chip">Slice of Life</span>
+                <span class="chip">Visual Novel</span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="tabs" role="tablist" aria-label="Sections">
+            <button class="tab" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview">Overview</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-characters" id="tab-characters">Characters & Staff</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-episodes" id="tab-episodes">Episodes</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-reviews" id="tab-reviews">Reviews</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-recos" id="tab-recos">Recommendations</button>
+          </nav>
+
+          <!-- Overview Panel -->
+          <div id="panel-overview" class="panel active" role="tabpanel" aria-labelledby="tab-overview">
+            <h3 class="card-title">Synopsis</h3>
+            <div class="synopsis" id="synopsis">
+On a quiet island wrapped in the warmth of summer, a transfer student stumbles upon memories sealed within the tide. Fireflies flicker at dusk, and each meeting hints at a story only the shoreline remembers. This is a sample synopsis used to demonstrate layout and typography. Replace it with your own content.
+            </div>
+            <button class="btn" id="readmoreBtn" style="margin-top:8px">Read more</button>
+            <div class="hr"></div>
+            <h3 class="card-title">Background</h3>
+            <p style="margin:0">
+              This project is a fan‑made, MAL‑inspired template for educational/demo purposes. It is not affiliated with MyAnimeList.
+            </p>
+          </div>
+
+          <!-- Characters & Staff Panel -->
+          <div id="panel-characters" class="panel" role="tabpanel" aria-labelledby="tab-characters">
+            <h3 class="card-title">Main Characters</h3>
+            <div class="char-grid" id="charGrid">
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Shiroha Naruse</div>
+                  <div class="role">Main • VA: Sample A</div>
+                </div>
+              </article>
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Ao Sorakado</div>
+                  <div class="role">Main • VA: Sample B</div>
+                </div>
+              </article>
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Kamome Kushima</div>
+                  <div class="role">Supporting • VA: Sample C</div>
+                </div>
+              </article>
+            </div>
+
+            <div class="hr"></div>
+            <h3 class="card-title">Staff</h3>
+            <div class="staff-list">
+              <div class="staff-item"><span>Director</span><span class="staff-role">Sample Director</span></div>
+              <div class="staff-item"><span>Series Composition</span><span class="staff-role">Sample Writer</span></div>
+              <div class="staff-item"><span>Character Design</span><span class="staff-role">Sample Designer</span></div>
+              <div class="staff-item"><span>Music</span><span class="staff-role">Sample Composer</span></div>
+            </div>
+          </div>
+
+          <!-- Episodes Panel -->
+          <div id="panel-episodes" class="panel" role="tabpanel" aria-labelledby="tab-episodes">
+            <h3 class="card-title">Episode List</h3>
+            <table class="episodes" aria-label="Episodes">
+              <thead>
+                <tr><th style="width:60px">#</th><th>Title</th><th style="width:180px">Air Date</th><th style="width:120px">Score</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Fireflies on the Pier</td><td>Jul 10, 202X</td><td>8.1</td></tr>
+                <tr><td>2</td><td>Seashell Post Office</td><td>Jul 17, 202X</td><td>8.0</td></tr>
+                <tr><td>3</td><td>The Tide That Remembers</td><td>Jul 24, 202X</td><td>8.2</td></tr>
+                <tr><td>4</td><td>Hide‑and‑Seek in the Sun</td><td>Jul 31, 202X</td><td>8.3</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Reviews Panel -->
+          <div id="panel-reviews" class="panel" role="tabpanel" aria-labelledby="tab-reviews">
+            <article class="review">
+              <div class="review-head">
+                <div class="avatar" aria-hidden>A</div>
+                <div>
+                  <strong>Animelover42</strong>
+                  <div class="stars" aria-label="Score">★★★★☆</div>
+                </div>
+              </div>
+              <p>
+                A tender seaside story with gentle pacing and striking dusk scenes. This template review shows how your user content will look.
+              </p>
+            </article>
+            <article class="review" style="margin-top:10px">
+              <div class="review-head">
+                <div class="avatar" aria-hidden>B</div>
+                <div>
+                  <strong>BlueSky</strong>
+                  <div class="stars" aria-label="Score">★★★☆☆</div>
+                </div>
+              </div>
+              <p>
+                Strong character moments; could use more variety in the middle episodes. Still, a pleasant summer watch.
+              </p>
+            </article>
+          </div>
+
+          <!-- Recommendations Panel -->
+          <div id="panel-recos" class="panel" role="tabpanel" aria-labelledby="tab-recos">
+            <div class="reco-grid">
+              <a class="reco" href="#">
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">Island Memories</div><div class="muted">Drama • Romance</div></div>
+              </a>
+              <a class="reco" href="#">
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">Firefly Nights</div><div class="muted">Slice of Life</div></div>
+              </a>
+              <a class="reco" href="#">
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">Seaglass Parade</div><div class="muted">Romance</div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Built as a learning template inspired by MyAnimeList's layout. All names/images are placeholders.
+  </footer>
+
+  <script>
+    // Simple Tabs
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.setAttribute('aria-selected','false'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.setAttribute('aria-selected','true');
+        const panel = document.getElementById(tab.getAttribute('aria-controls'));
+        panel.classList.add('active');
+        panel.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // Read more toggle for synopsis
+    const syn = document.getElementById('synopsis');
+    const readmoreBtn = document.getElementById('readmoreBtn');
+    let expanded = false;
+    const synFull = syn.textContent.trim();
+    const synShort = synFull.length > 320 ? synFull.slice(0, 320) + '…' : synFull;
+    function applySynopsis(){
+      syn.textContent = expanded ? synFull : synShort;
+      readmoreBtn.textContent = expanded ? 'Show less' : 'Read more';
+    }
+    applySynopsis();
+    readmoreBtn.addEventListener('click',()=>{expanded=!expanded;applySynopsis()});
+
+    // Add-to-list dropdown (demo only)
+    const addBtn = document.getElementById('addListBtn');
+    const addMenu = document.getElementById('addListMenu');
+    document.addEventListener('click', (e)=>{
+      const within = addBtn.contains(e.target) || addMenu.contains(e.target);
+      if (addBtn.contains(e.target)){
+        const open = addMenu.style.display==='block';
+        addMenu.style.display = open ? 'none' : 'block';
+        addBtn.setAttribute('aria-expanded', String(!open));
+      } else if (!within){
+        addMenu.style.display='none';
+        addBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    addMenu.querySelectorAll('button').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        addBtn.textContent = btn.dataset.status + ' ✓';
+        addMenu.style.display='none';
+        addBtn.setAttribute('aria-expanded','false');
+      })
+    });
+  </script>
+</body>
+</html>
