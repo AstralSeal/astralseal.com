@@ -155,14 +155,29 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#">Home</a>
-        <a href="#">Download</a>
-        <a href="#">Support</a>
+        <a href="https://patch.astralseal.com">Download</a>
+        <a href="https://facebook.com/AstralSeal">Support</a>
       </nav>
-      <div class="search" role="search">
-        <input type="search" placeholder="Search anime, manga, people…" aria-label="Search" />
-      </div>
-      <div class="userbox">
-        <div class="user-ava" title="Guest">G</div>
+      <div class="language-switcher" style="margin-left: auto;">
+        <div style="position: relative; display: inline-block;">
+          <button class="language-button" style="background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: white; padding: 8px 12px; display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px;">
+            <i class="fas fa-globe" style="font-size: 1em; opacity: 0.8;"></i>
+            <span>English</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 4px; opacity: 0.7;"></i>
+          </button>
+          <div class="language-dropdown" style="position: absolute; right: 0; top: 100%; margin-top: 5px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); min-width: 160px; z-index: 1000; display: none;">
+            <a href="#" class="language-option" style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; color: #1f2937; text-decoration: none; transition: background 0.2s;">
+              <span class="fi fi-us" style="font-size: 1.2em;"></span>
+              <span>English</span>
+              <i class="fas fa-check" style="margin-left: auto; color: #2e51a2; display: none;"></i>
+            </a>
+            <a href="#" class="language-option" style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; color: #1f2937; text-decoration: none; transition: background 0.2s;">
+              <span class="fi fi-th" style="font-size: 1.2em;"></span>
+              <span>Thai (ภาษาไทย)</span>
+              <i class="fas fa-check" style="margin-left: auto; color: #2e51a2; display: none;"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="subnav">
@@ -387,17 +402,85 @@ What's worse is that the only way to send these displaced characters back to the
   </footer>
 
   <script>
+    // Language Switcher
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageButton = document.querySelector<HTMLButtonElement>('.language-button');
+      const languageDropdown = document.querySelector<HTMLDivElement>('.language-dropdown');
+      const languageOptions = document.querySelectorAll<HTMLAnchorElement>('.language-option');
+
+      if (!languageButton || !languageDropdown) return;
+
+      // Toggle dropdown
+      languageButton.addEventListener('click', function(e: MouseEvent) {
+        e.stopPropagation();
+        if (languageDropdown) {
+          const isOpen = languageDropdown.style.display === 'block';
+          languageDropdown.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function() {
+        if (languageDropdown) {
+          languageDropdown.style.display = 'none';
+        }
+      });
+
+      // Handle language selection
+      languageOptions.forEach(option => {
+        option.addEventListener('click', function(this: HTMLElement, e: MouseEvent) {
+          e.preventDefault();
+          const lastSpan = this.querySelector('span:last-child');
+          const firstSpan = this.querySelector('span:first-child');
+          const checkIcon = this.querySelector('i.fa-check');
+          
+          if (!lastSpan || !firstSpan || !checkIcon || !languageButton) return;
+          
+          const langText = lastSpan.textContent;
+          const flagClass = firstSpan.className;
+          
+          // Update button text and flag
+          const buttonText = languageButton.querySelector('span');
+          const buttonIcon = languageButton.querySelector('i.fa-globe');
+          
+          // Replace with flag icon
+          if (buttonIcon) buttonIcon.className = flagClass;
+          if (buttonText && langText) buttonText.textContent = langText;
+          
+          // Update checkmarks
+          languageOptions.forEach(opt => {
+            const icon = opt.querySelector('i.fa-check');
+            if (icon) {
+              (icon as HTMLElement).style.display = 'none';
+            }
+          });
+          
+          (checkIcon as HTMLElement).style.display = 'inline-block';
+          
+          // Close dropdown
+          if (languageDropdown) {
+            languageDropdown.style.display = 'none';
+          }
+        });
+      });
+    });
+
     // Simple Tabs
-    const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.panel');
+    const tabs = document.querySelectorAll<HTMLElement>('.tab');
+    const panels = document.querySelectorAll<HTMLElement>('.panel');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.setAttribute('aria-selected','false'));
+        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
         panels.forEach(p => p.classList.remove('active'));
-        tab.setAttribute('aria-selected','true');
-        const panel = document.getElementById(tab.getAttribute('aria-controls'));
-        panel.classList.add('active');
-        panel.scrollIntoView({behavior:'smooth', block:'start'});
+        tab.setAttribute('aria-selected', 'true');
+        const controlsId = tab.getAttribute('aria-controls');
+        if (controlsId) {
+          const panel = document.getElementById(controlsId);
+          if (panel) {
+            panel.classList.add('active');
+            panel.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        }
       });
     });
 
