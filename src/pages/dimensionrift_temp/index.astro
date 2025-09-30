@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Dimension Rift</title>
   <meta name="description" content="A single‑file, MyAnimeList‑inspired anime page template. Not affiliated with MAL." />
   <style>
@@ -153,10 +154,9 @@
         <span>DimensionRift</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#">Anime</a>
-        <a href="#">Manga</a>
-        <a href="#">Community</a>
-        <a href="#">Industry</a>
+        <a href="#">Home</a>
+        <a href="#">Download</a>
+        <a href="#">Support</a>
       </nav>
       <div class="search" role="search">
         <input type="search" placeholder="Search anime, manga, people…" aria-label="Search" />
@@ -168,9 +168,9 @@
     <div class="subnav">
       <div class="subnav-inner">
         <div class="crumbs" aria-label="Breadcrumb">
-          <a href="#">Anime</a>
+          <a href="#">AstralSeal Homepage</a>
           <span>›</span>
-          <a href="#">Summer Pockets (Example)</a>
+          <a href="#">Dimension Rift : Otaku Save The World</a>
         </div>
       </div>
     </div>
@@ -187,23 +187,15 @@
             <img alt="Cover" src="images/dimensionrift/cover_capsule.jpg"/>
           </div>
           <div class="hr"></div>
-          <div class="score">
-            <div class="score-main">
-              <div class="score-n" aria-label="Score">8.4</div>
-              <div>
-                <div><strong>Very Good</strong></div>
-                <div class="stars" aria-hidden>★ ★ ★ ★ ☆</div>
-              </div>
-            </div>
-            <div class="badge" title="Rank">Rank #112</div>
-            <div class="badge" title="Popularity">Popularity #987</div>
-            <div class="badge" title="Members">Members 124,321</div>
-            <div class="badge" title="Favorites">Favorites 2,301</div>
-          </div>
-          <div class="hr"></div>
-          <div class="actions" aria-label="Quick actions">
-            <button class="btn primary" id="addListBtn" aria-expanded="false" aria-controls="addListMenu">Add to List ▾</button>
-            <button class="btn" title="Add to favorites">♡ Favorite</button>
+          <div class="actions" aria-label="Quick actions" style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
+            <a href="https://store.steampowered.com/app/3930590/Dimension_Rift__Otaku_Save_The_World" class="btn" title="View on Steam" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; width: 100%; background-color: #000; color: #fff; padding: 12px; font-weight: 600;">
+              <i class="fab fa-steam" style="font-size: 1.2em;"></i>
+              Wishlist on Steam
+            </a>
+            <a href="https://www.facebook.com/astralseal" class="btn" title="Follow us on Facebook" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; width: 100%; background-color: #fff; color: #000; padding: 12px; font-weight: 600; border: 1px solid #e5e7eb;">
+              <i class="fab fa-facebook-f" style="font-size: 1.2em; color: #000;"></i>
+              Follow us on Facebook
+            </a>
           </div>
         </div>
 
@@ -391,7 +383,7 @@ What's worse is that the only way to send these displaced characters back to the
   </main>
 
   <footer>
-    Built as a learning template inspired by MyAnimeList's layout. All names/images are placeholders.
+    Copyright © 2025 AstralSeal.
   </footer>
 
   <script>
