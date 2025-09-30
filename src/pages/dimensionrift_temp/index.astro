@@ -149,9 +149,8 @@
   <!-- Top Bar -->
   <header class="topbar" role="banner">
     <div class="topbar-inner">
-      <a href="#" class="logo" aria-label="Home">
-        <span class="logo-badge" aria-hidden>AN</span>
-        <span>DimensionRift</span>
+      <a href="/" class="logo" aria-label="Home" style="padding: 4px 0;">
+        <img src="/images/dimensionrift/logo_navbar.png" alt="Dimension Rift" style="height: 50px; width: auto; display: block;">
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#">Home</a>
@@ -198,7 +197,6 @@
       <aside aria-label="Sidebar">
         <div class="card card-pad">
           <div class="cover" aria-label="Cover image">
-            <!-- Inline SVG placeholder poster (replace href with your image)w450 h640 -->
             <img alt="Cover" src="images/dimensionrift/cover_capsule.jpg"/>
           </div>
           <div class="hr"></div>
@@ -246,42 +244,32 @@
           <div class="titlebar">
             <div>
               <h1 class="title">Dimension Rift : Otaku Save The World</h1>
-              <p class="subtitle">Visual Novel • AstralSeal • Coming Soon</p>
-              <div class="tags" aria-label="Tags">
-                <span class="chip">Drama</span>
-                <span class="chip">Romance</span>
-                <span class="chip">Slice of Life</span>
-                <span class="chip">Visual Novel</span>
-              </div>
+              <p class="subtitle">AstralSeal 4th Project • Coming Soon</p>
             </div>
           </div>
 
           <nav class="tabs" role="tablist" aria-label="Sections">
             <button class="tab" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview">Overview</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-characters" id="tab-characters">Characters & Staff</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-episodes" id="tab-episodes">Episodes</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-reviews" id="tab-reviews">Reviews</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-recos" id="tab-recos">Recommendations</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-story" id="tab-story">Story</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-characters" id="tab-characters">Characters</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-announcement" id="tab-recos">Announcement</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-staff" id="tab-staff">Staff</button>
           </nav>
 
           <!-- Overview Panel -->
           <div id="panel-overview" class="panel active" role="tabpanel" aria-labelledby="tab-overview">
             <h3 class="card-title">Overview</h3>
             <p style="margin:0">
-              The 4th visual novel game from the creators of Re:Fragment Absolute Ambition. In Dimension Rift: Otaku Save The World, chaos breaks loose when anime characters escape into the real world! Join forces with an top-tier otaku and the guardian of the anime world on a mission to find "Edith"  a magical pen that can rewrite any story! Follow the adventure of an otaku who must save the world like no anime has shown before!
+              The 4th visual novel game from the creators of Re:Fragment ~Absolute Ambition~. In Dimension Rift: Otaku Save The World, chaos breaks loose when anime characters escape into the real world! Join forces with an top-tier otaku and the guardian of the anime world on a mission to find "Edith"  a magical pen that can rewrite any story! Follow the adventure of an otaku who must save the world like no anime has shown before!
             </p>
-
             <div class="hr"></div>
 
-            <h3 class="card-title">Synopsis</h3>
-            <div class="synopsis" id="synopsis">
-When "Edith," the mystical pen capable of rewriting the storylines of anime worlds, is stolen, the real world faces turmoil as dimensional rifts tear open, allowing anime characters to spill into reality.
-
-"Shimada Yuki," the story's protagonist—a legendary-class otaku—must team up with "Lecia," the guardian of anime world balance, to stop this chaos. However, capturing the escaped characters proves far from simple, as they must deal with countless mishaps and the quirky, troublesome personalities of these characters that give Yuki such headaches he's forced to seek help from "Shirogane Hime," a beautiful IT genius who excels at everything—especially her sharp tongue.
-
-What's worse is that the only way to send these displaced characters back to their worlds is to "capture their hearts." Will Yuki and his companions be able to win over all the characters' hearts and protect both worlds? Or will everything be rewritten... by the pen Edith?            </div>
-            <button class="btn" id="readmoreBtn" style="margin-top:8px">Read more</button>
+            <h3 class="card-title">Concept</h3>
+            <p style="margin:0">
+              Insert text or image here.
+            </p>
             <div class="hr"></div>
+
             <h3 class="card-title">Features</h3>
             <p style="margin:0">
               <ul>
@@ -294,7 +282,22 @@ What's worse is that the only way to send these displaced characters back to the
             </p>
           </div>
 
-          <!-- Characters & Staff Panel -->
+          <!-- Story Panel -->
+          <div id="panel-story" class="panel" role="tabpanel" aria-labelledby="tab-story">
+            <h3 class="card-title">Story</h3>
+
+            <div class="cover" aria-label="Header">
+            <img src="/images/dimensionrift/library_header_2x.jpg" alt="Dimension Rift" style="height: 400px; width: auto; display: block;">
+            </div>
+            <br>
+<p>When "Edith," the mystical pen capable of rewriting the storylines of anime worlds, is stolen, the real world faces turmoil as dimensional rifts tear open, allowing anime characters to spill into reality.
+</p><br>
+<p>"Shimada Yuki," the story's protagonist—a legendary-class otaku—must team up with "Lecia," the guardian of anime world balance, to stop this chaos. However, capturing the escaped characters proves far from simple, as they must deal with countless mishaps and the quirky, troublesome personalities of these characters that give Yuki such headaches he's forced to seek help from "Shirogane Hime," a beautiful IT genius who excels at everything—especially her sharp tongue.
+</p><br>
+<p>What's worse is that the only way to send these displaced characters back to their worlds is to "capture their hearts." Will Yuki and his companions be able to win over all the characters' hearts and protect both worlds? Or will everything be rewritten... by the pen Edith?</p>
+          </div>
+
+          <!-- Characters Panel -->
           <div id="panel-characters" class="panel" role="tabpanel" aria-labelledby="tab-characters">
             <h3 class="card-title">Main Characters</h3>
             <div class="char-grid" id="charGrid">
@@ -316,18 +319,36 @@ What's worse is that the only way to send these displaced characters back to the
                 <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
                 <div>
                   <div class="name">Kamome Kushima</div>
-                  <div class="role">Supporting • VA: Sample C</div>
+                  <div class="role">Main • VA: Sample C</div>
                 </div>
               </article>
             </div>
 
             <div class="hr"></div>
-            <h3 class="card-title">Staff</h3>
+          <h3 class="card-title">Supporting Characters</h3>
+            <div class="char-grid" id="charGrid">
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Shiroha Naruse</div>
+                  <div class="role">Support • CV: John Doe</div>
+                </div>
+              </article>
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Ao Sorakado</div>
+                  <div class="role">Support • CV: John Doe</div>
+                </div>
+              </article>
+            </div>
+
+            <div class="hr"></div>
+            <h3 class="card-title">Others</h3>
             <div class="staff-list">
-              <div class="staff-item"><span>Director</span><span class="staff-role">Sample Director</span></div>
-              <div class="staff-item"><span>Series Composition</span><span class="staff-role">Sample Writer</span></div>
-              <div class="staff-item"><span>Character Design</span><span class="staff-role">Sample Designer</span></div>
-              <div class="staff-item"><span>Music</span><span class="staff-role">Sample Composer</span></div>
+              <div class="staff-item"><span>Character1</span><span class="staff-role">John Doe</span></div>
+              <div class="staff-item"><span>Character2</span><span class="staff-role">John Doe</span></div>
+              <div class="staff-item"><span>Character3</span><span class="staff-role">John Doe</span></div>
             </div>
           </div>
 
@@ -347,51 +368,44 @@ What's worse is that the only way to send these displaced characters back to the
             </table>
           </div>
 
-          <!-- Reviews Panel -->
-          <div id="panel-reviews" class="panel" role="tabpanel" aria-labelledby="tab-reviews">
-            <article class="review">
-              <div class="review-head">
-                <div class="avatar" aria-hidden>A</div>
-                <div>
-                  <strong>Animelover42</strong>
-                  <div class="stars" aria-label="Score">★★★★☆</div>
-                </div>
-              </div>
-              <p>
-                A tender seaside story with gentle pacing and striking dusk scenes. This template review shows how your user content will look.
-              </p>
-            </article>
-            <article class="review" style="margin-top:10px">
-              <div class="review-head">
-                <div class="avatar" aria-hidden>B</div>
-                <div>
-                  <strong>BlueSky</strong>
-                  <div class="stars" aria-label="Score">★★★☆☆</div>
-                </div>
-              </div>
-              <p>
-                Strong character moments; could use more variety in the middle episodes. Still, a pleasant summer watch.
-              </p>
-            </article>
-          </div>
-
-          <!-- Recommendations Panel -->
-          <div id="panel-recos" class="panel" role="tabpanel" aria-labelledby="tab-recos">
+          <!-- Announcement Panel -->
+          <div id="panel-announcement" class="panel" role="tabpanel" aria-labelledby="tab-announcement">
             <div class="reco-grid">
               <a class="reco" href="#">
-                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
-                <div class="meta"><div class="t">Island Memories</div><div class="muted">Drama • Romance</div></div>
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3EImage%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">News #1</div><div class="muted">2025-09-30</div></div>
               </a>
               <a class="reco" href="#">
-                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
-                <div class="meta"><div class="t">Firefly Nights</div><div class="muted">Slice of Life</div></div>
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3EImage%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">News #2</div><div class="muted">2025-08-01</div></div>
               </a>
               <a class="reco" href="#">
-                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3ESimilar Pick%3C/text%3E%3C/svg%3E">
-                <div class="meta"><div class="t">Seaglass Parade</div><div class="muted">Romance</div></div>
+                <img alt="Recommendation" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23c7d2fe'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232e51a2' font-size='20' font-family='Arial'%3EImage%3C/text%3E%3C/svg%3E">
+                <div class="meta"><div class="t">News #3</div><div class="muted">2025-07-15</div></div>
               </a>
             </div>
           </div>
+
+          <!-- Staff Panel -->
+          <div id="panel-staff" class="panel" role="tabpanel" aria-labelledby="tab-staff">
+            <h3 class="card-title">Voice Actor</h3>
+            <div class="staff-list">
+              <div class="staff-item"><span>Character1</span><span class="staff-role">John Doe</span></div>
+              <div class="staff-item"><span>Character2</span><span class="staff-role">John Doe</span></div>
+              <div class="staff-item"><span>Character3</span><span class="staff-role">John Doe</span></div>
+            </div>
+
+            <div class="hr"></div>
+
+            <h3 class="card-title">Development Team</h3>
+            <div class="staff-list">
+              <div class="staff-item"><span>Director</span><span class="staff-role">Rayedge</span></div>
+              <div class="staff-item"><span>Scenario Writer</span><span class="staff-role">Woofy</span></div>
+              <div class="staff-item"><span>Artist/Character Design</span><span class="staff-role">Rayedge / Woofy</span></div>
+              <div class="staff-item"><span>Programming</span><span class="staff-role">AstralAria</span></div>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>
@@ -482,41 +496,6 @@ What's worse is that the only way to send these displaced characters back to the
           }
         }
       });
-    });
-
-    // Read more toggle for synopsis
-    const syn = document.getElementById('synopsis');
-    const readmoreBtn = document.getElementById('readmoreBtn');
-    let expanded = false;
-    const synFull = syn.textContent.trim();
-    const synShort = synFull.length > 320 ? synFull.slice(0, 320) + '…' : synFull;
-    function applySynopsis(){
-      syn.textContent = expanded ? synFull : synShort;
-      readmoreBtn.textContent = expanded ? 'Show less' : 'Read more';
-    }
-    applySynopsis();
-    readmoreBtn.addEventListener('click',()=>{expanded=!expanded;applySynopsis()});
-
-    // Add-to-list dropdown (demo only)
-    const addBtn = document.getElementById('addListBtn');
-    const addMenu = document.getElementById('addListMenu');
-    document.addEventListener('click', (e)=>{
-      const within = addBtn.contains(e.target) || addMenu.contains(e.target);
-      if (addBtn.contains(e.target)){
-        const open = addMenu.style.display==='block';
-        addMenu.style.display = open ? 'none' : 'block';
-        addBtn.setAttribute('aria-expanded', String(!open));
-      } else if (!within){
-        addMenu.style.display='none';
-        addBtn.setAttribute('aria-expanded','false');
-      }
-    });
-    addMenu.querySelectorAll('button').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        addBtn.textContent = btn.dataset.status + ' ✓';
-        addMenu.style.display='none';
-        addBtn.setAttribute('aria-expanded','false');
-      })
     });
   </script>
 </body>
