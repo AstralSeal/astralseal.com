@@ -460,35 +460,38 @@
     Copyright © 2025 AstralSeal.
   </footer>
 
-  <script>
+  <script is:inline>
     // Language Switcher
     document.addEventListener('DOMContentLoaded', function() {
-      const languageButton = document.querySelector<HTMLButtonElement>('.language-button');
-      const languageDropdown = document.querySelector<HTMLDivElement>('.language-dropdown');
-      const languageOptions = document.querySelectorAll<HTMLAnchorElement>('.language-option');
+      const languageButton = document.querySelector('.language-button');
+      const languageDropdown = document.querySelector('.language-dropdown');
+      const languageOptions = document.querySelectorAll('.language-option');
 
       if (!languageButton || !languageDropdown) return;
 
       // Toggle dropdown
-      languageButton.addEventListener('click', function(e: MouseEvent) {
+      languageButton.addEventListener('click', function(e) {
         e.stopPropagation();
-        if (languageDropdown) {
-          const isOpen = languageDropdown.style.display === 'block';
-          languageDropdown.style.display = isOpen ? 'none' : 'block';
-        }
+        const isOpen = languageDropdown.style.display === 'block';
+        languageDropdown.style.display = isOpen ? 'none' : 'block';
       });
 
       // Close dropdown when clicking outside
       document.addEventListener('click', function() {
-        if (languageDropdown) {
-          languageDropdown.style.display = 'none';
-        }
+        languageDropdown.style.display = 'none';
+      });
+
+      // Prevent dropdown from closing when clicking inside it
+      languageDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
       });
 
       // Handle language selection
-      languageOptions.forEach(option => {
-        option.addEventListener('click', function(this: HTMLElement, e: MouseEvent) {
+      languageOptions.forEach(function(option) {
+        option.addEventListener('click', function(e) {
           e.preventDefault();
+          e.stopPropagation();
+          
           const lastSpan = this.querySelector('span:last-child');
           const firstSpan = this.querySelector('span:first-child');
           const checkIcon = this.querySelector('i.fa-check');
@@ -507,37 +510,40 @@
           if (buttonText && langText) buttonText.textContent = langText;
           
           // Update checkmarks
-          languageOptions.forEach(opt => {
+          languageOptions.forEach(function(opt) {
             const icon = opt.querySelector('i.fa-check');
             if (icon) {
-              (icon as HTMLElement).style.display = 'none';
+              icon.style.display = 'none';
             }
           });
           
-          (checkIcon as HTMLElement).style.display = 'inline-block';
+          checkIcon.style.display = 'inline-block';
           
           // Close dropdown
-          if (languageDropdown) {
-            languageDropdown.style.display = 'none';
-          }
+          languageDropdown.style.display = 'none';
         });
       });
-    </script>
-    
-    <script>
+    });
+  </script>
+  
+  <script is:inline>
     // Tab switching
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
       const tabs = document.querySelectorAll('.tab');
       const panels = document.querySelectorAll('.panel');
       
-      tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
           
           // Remove active state from all tabs and panels
-          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-          panels.forEach(p => p.classList.remove('active'));
+          tabs.forEach(function(t) { 
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(function(p) { 
+            p.classList.remove('active');
+          });
           
           // Set active state on clicked tab and corresponding panel
           tab.setAttribute('aria-selected', 'true');
@@ -563,6 +569,6 @@
         }
       }
     });
-    </script>
+  </script>
 </body>
 </html>
