@@ -114,12 +114,65 @@
     .synopsis{white-space:pre-line}
     .readmore{color:var(--mal-blue);font-weight:800;cursor:pointer}
 
-    .char-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    @media (min-width: 860px){.char-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .char{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
-    .char img{width:64px;height:64px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
-    .char .name{font-weight:800}
-    .char .role{color:var(--muted);font-size:12px}
+    /* Default character grid (for Supporting Characters and others) */
+    .char-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:16px;margin:20px 0}
+    @media (min-width: 768px){.char-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (min-width: 1024px){.char-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    
+    /* Full-width character grid for Main Characters */
+    #panel-characters > .char-grid {
+      grid-template-columns: 1fr !important;
+      max-width: 100%;
+    }
+    
+    /* Larger images and taller cards for Main Characters */
+    #mainCharacters + .char-grid .char {
+      min-height: 250px;
+      align-items: flex-start;
+      padding: 24px;
+      position: relative;
+    }
+    
+    #mainCharacters + .char-grid .char img {
+      width: 150px;
+      height: 150px;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+    
+    #mainCharacters + .char-grid .char > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    #mainCharacters + .char-grid .char .description {
+      margin-top: 12px;
+      font-size: 0.95em;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    
+    /* Two-column grid for Supporting Characters */
+    #supportCharacters + .char-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      max-width: 80%;
+      margin: 20px auto;
+    }
+    
+    /* Responsive adjustments for Supporting Characters */
+    @media (max-width: 768px) {
+      #supportCharacters + .char-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 100%;
+      }
+    }
+    
+    .char{display:flex;gap:16px;border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff;transition:all 0.2s ease}
+    .char:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+    .char img{width:96px;height:96px;border-radius:12px;border:2px solid var(--line);object-fit:cover}
+    .char .name{font-size:1.2em;font-weight:800;margin-bottom:6px;color:var(--fg)}
+    .char .role{font-size:0.95em;color:var(--muted);background:var(--chip);display:inline-block;padding:3px 10px;border-radius:6px}
 
     .staff-list{display:grid;gap:8px}
     .staff-item{display:flex;justify-content:space-between;padding:8px 10px;border:1px dashed var(--line);border-radius:10px}
@@ -299,73 +352,62 @@
 
           <!-- Characters Panel -->
           <div id="panel-characters" class="panel" role="tabpanel" aria-labelledby="tab-characters">
-            <h3 class="card-title">Main Characters</h3>
+            <h3 class="card-title" id="mainCharacters">Main Characters</h3>
+            <div class="char-grid" id="charGrid">
+              <article class="char">
+                <img alt="Lecia" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Lecia Forentier Erdiah Mirania de Evalia</div>
+                  <div class="role">CV: John Doe</div>
+                  <div class="description">
+                    The young guardian of the anime world's balance. Despite her noble title and responsibilities, she's quite clumsy when it comes to human world technology. She wields the legendary "Edith" pen, which can rewrite anime storylines.
+                  </div>
+                </div>
+              </article>
+              <article class="char">
+                <img alt="Shirogane Hime" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Shirogane Hime</div>
+                  <div class="role">CV: John Doe</div>
+                  <div class="description">
+                    A genius IT specialist and Yuki's childhood friend. She's the brains behind the operation to capture the escaped anime characters. Despite her sharp tongue and no-nonsense attitude, she cares deeply for her friends and has a soft spot for romantic stories.
+                  </div>
+                </div>
+              </article>
+            </div>
+
+          <div class="hr"></div>
+          <h3 class="card-title" id="supportCharacters">Supporting Characters</h3>
             <div class="char-grid" id="charGrid">
               <article class="char">
                 <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
                 <div>
-                  <div class="name">Shiroha Naruse</div>
-                  <div class="role">Main • VA: Sample A</div>
+                  <div class="name">Student A</div>
+                  <div class="role">CV: John Doe</div>
                 </div>
               </article>
               <article class="char">
                 <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
                 <div>
-                  <div class="name">Ao Sorakado</div>
-                  <div class="role">Main • VA: Sample B</div>
+                  <div class="name">Student B</div>
+                  <div class="role">CV: John Doe</div>
                 </div>
               </article>
               <article class="char">
                 <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
                 <div>
-                  <div class="name">Kamome Kushima</div>
-                  <div class="role">Main • VA: Sample C</div>
+                  <div class="name">Student C</div>
+                  <div class="role">CV: John Doe</div>
+                </div>
+              </article>
+              <article class="char">
+                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
+                <div>
+                  <div class="name">Student D</div>
+                  <div class="role">CV: John Doe</div>
                 </div>
               </article>
             </div>
-
-            <div class="hr"></div>
-          <h3 class="card-title">Supporting Characters</h3>
-            <div class="char-grid" id="charGrid">
-              <article class="char">
-                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
-                <div>
-                  <div class="name">Shiroha Naruse</div>
-                  <div class="role">Support • CV: John Doe</div>
-                </div>
-              </article>
-              <article class="char">
-                <img alt="Character" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E">
-                <div>
-                  <div class="name">Ao Sorakado</div>
-                  <div class="role">Support • CV: John Doe</div>
-                </div>
-              </article>
-            </div>
-
-            <div class="hr"></div>
-            <h3 class="card-title">Others</h3>
-            <div class="staff-list">
-              <div class="staff-item"><span>Character1</span><span class="staff-role">John Doe</span></div>
-              <div class="staff-item"><span>Character2</span><span class="staff-role">John Doe</span></div>
-              <div class="staff-item"><span>Character3</span><span class="staff-role">John Doe</span></div>
-            </div>
-          </div>
-
-          <!-- Episodes Panel -->
-          <div id="panel-episodes" class="panel" role="tabpanel" aria-labelledby="tab-episodes">
-            <h3 class="card-title">Episode List</h3>
-            <table class="episodes" aria-label="Episodes">
-              <thead>
-                <tr><th style="width:60px">#</th><th>Title</th><th style="width:180px">Air Date</th><th style="width:120px">Score</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Fireflies on the Pier</td><td>Jul 10, 202X</td><td>8.1</td></tr>
-                <tr><td>2</td><td>Seashell Post Office</td><td>Jul 17, 202X</td><td>8.0</td></tr>
-                <tr><td>3</td><td>The Tide That Remembers</td><td>Jul 24, 202X</td><td>8.2</td></tr>
-                <tr><td>4</td><td>Hide‑and‑Seek in the Sun</td><td>Jul 31, 202X</td><td>8.3</td></tr>
-              </tbody>
-            </table>
           </div>
 
           <!-- Announcement Panel -->
