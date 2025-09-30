@@ -127,10 +127,11 @@
     
     /* Larger images and taller cards for Main Characters */
     #mainCharacters + .char-grid .char {
-      min-height: 250px;
+      min-height: auto;
       align-items: flex-start;
-      padding: 24px;
+      padding: 20px 24px;
       position: relative;
+      margin-bottom: 0;
     }
     
     #mainCharacters + .char-grid .char img {
@@ -147,10 +148,11 @@
     }
     
     #mainCharacters + .char-grid .char .description {
-      margin-top: 12px;
-      font-size: 0.95em;
+      margin: 8px 0 0 0;
+      font-size: 0.9em;
       line-height: 1.5;
       color: var(--muted);
+      padding-bottom: 4px;
     }
     
     /* Two-column grid for Supporting Characters */
@@ -271,15 +273,16 @@
             <tr><th>Genre</th><td>Visual Novel</td></tr>
             <tr><th>Language</th><td>Thai, English</td></tr>
             <tr><th>Length</th><td>~10 hours</td></tr>
-            <tr><th>Release Date</th><td>Coming Soon</td></tr>
+            <tr><th>Release</th><td>Coming Soon</td></tr>
             <tr><th>Price</th><td>N/A</td></tr>
           </table>
           <div class="hr"></div>
-          <h3 class="card-title">Spec</h3>
+          <h3 class="card-title">Specification</h3>
           <table class="info-table">
             <tr><th>OS</th><td>Windows 10/11 (64-bit)</td></tr>
             <tr><th>Storage</th><td>~3 GB</td></tr>
-            <tr><th>Screen Size</th><td>1920 x 1080 px</td></tr>
+            <tr><th>Resolution</th><td>1920 x 1080 px</td></tr>
+            <tr><th>Engine</th><td>Ren'Py</td></tr>
           </table>
         </div>
 
@@ -519,26 +522,47 @@
           }
         });
       });
-    });
-
-    // Simple Tabs
-    const tabs = document.querySelectorAll<HTMLElement>('.tab');
-    const panels = document.querySelectorAll<HTMLElement>('.panel');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-        panels.forEach(p => p.classList.remove('active'));
-        tab.setAttribute('aria-selected', 'true');
-        const controlsId = tab.getAttribute('aria-controls');
-        if (controlsId) {
-          const panel = document.getElementById(controlsId);
-          if (panel) {
-            panel.classList.add('active');
-            panel.scrollIntoView({behavior:'smooth', block:'start'});
+    </script>
+    
+    <script>
+    // Tab switching
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const panels = document.querySelectorAll('.panel');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Remove active state from all tabs and panels
+          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          panels.forEach(p => p.classList.remove('active'));
+          
+          // Set active state on clicked tab and corresponding panel
+          tab.setAttribute('aria-selected', 'true');
+          const panelId = tab.getAttribute('aria-controls');
+          if (panelId) {
+            const panel = document.getElementById(panelId);
+            if (panel) {
+              panel.classList.add('active');
+            }
+          }
+        });
+      });
+      
+      // Handle initial tab state
+      const initialTab = document.querySelector('.tab[aria-selected="true"]');
+      if (initialTab) {
+        const initialPanelId = initialTab.getAttribute('aria-controls');
+        if (initialPanelId) {
+          const initialPanel = document.getElementById(initialPanelId);
+          if (initialPanel) {
+            initialPanel.classList.add('active');
           }
         }
-      });
+      }
     });
-  </script>
+    </script>
 </body>
 </html>
