@@ -372,72 +372,57 @@
         cursor: pointer;
       }
 
-      /* Default character grid (for Supporting Characters and others) */
+      /* Character grid for both main and supporting characters */
       .char-grid {
         display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 16px;
         margin: 20px 0;
       }
-      @media (min-width: 768px) {
+      @media (min-width: 640px) {
         .char-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
-      @media (min-width: 1024px) {
-        .char-grid {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      /* Main Characters grid */
+      #mainCharacters + .char-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+      @media (min-width: 640px) {
+        #mainCharacters + .char-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
-      /* Full-width character grid for Main Characters */
-      #panel-characters > .char-grid {
-        grid-template-columns: 1fr !important;
-        max-width: 100%;
-      }
-
-      /* Larger images and taller cards for Main Characters */
       #mainCharacters + .char-grid .char {
         min-height: auto;
         align-items: flex-start;
-        padding: 20px 24px;
+        padding: 16px;
         position: relative;
         margin-bottom: 0;
-      }
-
-      #mainCharacters + .char-grid .char img {
-        width: 150px;
-        height: 150px;
-        border-radius: 16px;
-        flex-shrink: 0;
-      }
-
-      #mainCharacters + .char-grid .char > div {
-        display: flex;
-        flex-direction: column;
         height: 100%;
       }
 
-      #mainCharacters + .char-grid .char .description {
-        margin: 8px 0 0 0;
-        font-size: 0.9em;
-        line-height: 1.5;
-        color: var(--muted);
-        padding-bottom: 4px;
+      #mainCharacters + .char-grid .char img {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        flex-shrink: 0;
       }
 
-      /* Two-column grid for Supporting Characters */
+      /* Supporting Characters grid */
       #supportCharacters + .char-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        max-width: 80%;
-        margin: 20px auto;
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 8px;
       }
-
-      /* Responsive adjustments for Supporting Characters */
-      @media (max-width: 768px) {
+      @media (min-width: 640px) {
         #supportCharacters + .char-grid {
-          grid-template-columns: 1fr !important;
-          max-width: 100%;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
         }
       }
 
@@ -448,11 +433,6 @@
         border-radius: 16px;
         padding: 20px;
         background: #fff;
-        transition: all 0.2s ease;
-      }
-      .char:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
       .char img {
         width: 96px;
@@ -849,8 +829,9 @@
                     </div>
                   </div>
                 </article>
+              </div>
 
-                <h3 class="card-title" id="supportCharacters">
+                <h3 class="card-title" id="supportCharacters" style="margin-top: 0;">
                   Supporting Characters
                 </h3>
                 <div class="char-grid" id="charGrid">
@@ -894,9 +875,8 @@
                       <div class="role">CV: John Doe</div>
                     </div>
                   </article>
-                </div>
               </div>
-
+            </div>
               <div class="hr"></div>
 
               <h3 class="card-title">Development Team</h3>
