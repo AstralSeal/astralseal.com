@@ -653,7 +653,7 @@
           </div>
 
           <div class="card card-pad" style="margin-top:12px">
-            <h3 class="card-title">Information</h3>
+            <h2 class="card-title">Information</h2>
             <table class="info-table">
               <tr><th>Genre</th><td>Visual Novel</td></tr>
               <tr><th>Length</th><td>~10 hours</td></tr>
@@ -661,7 +661,7 @@
               <tr><th>Price</th><td>N/A</td></tr>
             </table>
             <div class="hr"></div>
-            <h3 class="card-title">Specification</h3>
+            <h2 class="card-title">Specification</h2>
             <table class="info-table">
               <tr><th>OS</th><td>Windows 10/11 (64-bit)</td></tr>
               <tr><th>Processor</th><td>1.8GHz Dual-Core CPU or above</td></tr>
@@ -674,7 +674,7 @@
           </div>
 
           <div class="card card-pad" style="margin-top:12px">
-            <h3 class="card-title" style="margin-bottom: 12px;">Languages</h3>
+            <h2 class="card-title" style="margin-bottom: 12px;">Languages</h2>
             <div style="overflow-x: auto;">
               <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
                 <thead>
@@ -704,7 +704,7 @@
           </div>
 
           <div class="card card-pad" style="margin-top:12px">
-            <h3 class="card-title">Disclaimer</h3>
+            <h2 class="card-title">Disclaimer</h2>
             <p>
               Characters, places and events are fictional - resemblance of
               real-world people, places or events is purely coincidental.
@@ -729,7 +729,7 @@
 
             <!-- Overview Panel -->
             <div id="panel-overview" class="panel active">
-              <h3 class="card-title">Overview</h3>
+              <h2 class="card-title">Overview</h2>
               <p style="margin:0">
                 The 4th visual novel game from the creators of Re:Fragment
                 ~Absolute Ambition~. In Dimension Rift: Otaku Save The World,
@@ -741,7 +741,7 @@
               </p>
               <div class="hr"></div>
 
-              <h3 class="card-title">Story</h3>
+              <h2 class="card-title">Story</h2>
 
               <div class="cover" aria-label="Header">
                 <img
@@ -776,7 +776,7 @@
               </p>
               <div class="hr"></div>
 
-              <h3 class="card-title">Features</h3>
+              <h2 class="card-title">Features</h2>
               <p style="margin:0">
                 <ul>
                   <li>- 10-hour storyline with multiple endings</li>
@@ -792,7 +792,7 @@
 
               <div class="hr"></div>
 
-              <h3 class="card-title" id="mainCharacters">Main Characters</h3>
+              <h2 class="card-title" id="mainCharacters">Main Characters</h2>
               <div class="char-grid" id="charGrid">
                 <article class="char">
                   <img
@@ -831,9 +831,9 @@
                 </article>
               </div>
 
-                <h3 class="card-title" id="supportCharacters" style="margin-top: 0;">
+                <h2 class="card-title" id="supportCharacters" style="margin-top: 0;">
                   Supporting Characters
-                </h3>
+                </h2>
                 <div class="char-grid" id="charGrid">
                   <article class="char">
                     <img
@@ -879,7 +879,7 @@
             </div>
               <div class="hr"></div>
 
-              <h3 class="card-title">Development Team</h3>
+              <h2 class="card-title">Development Team</h2>
               <div class="staff-list">
                 <div class="staff-item">
                   <span>Director</span><span class="staff-role">Rayedge</span>
@@ -900,7 +900,7 @@
 
               <div class="hr"></div>
 
-              <h3 class="card-title">Announcement</h3>
+              <!--<h2 class="card-title">Announcement</h2>
               <div class="reco-grid">
                 <a class="reco" href="#">
                   <img
@@ -935,16 +935,182 @@
                     </div>
                   </div>
                 </a>
+              </div> -->
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="card card-pad" style="margin-top: 24px;">
+              <h2 class="card-title">Gallery</h2>
+              <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss1.jpg', 'Game Screenshot 1')">
+                  <img 
+                    src="/images/dimensionrift/gallery/ss1.jpg" 
+                    alt="Game Screenshot 1" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss2.jpg', 'Game Screenshot 2')">
+                  <img 
+                    src="/images/dimensionrift/gallery/ss2.jpg" 
+                    alt="Game Screenshot 2" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss3.jpg', 'Game Screenshot 3')">
+                  <img 
+                    src="/images/dimensionrift/gallery/ss3.jpg" 
+                    alt="Game Screenshot 3" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss4.jpg', 'Game Screenshot 4')">
+                  <img 
+                    src="/images/dimensionrift/gallery/ss4.jpg" 
+                    alt="Game Screenshot 4" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss5.jpg', 'Game Screenshot 5')">
+                  <img 
+                    src="/images/dimensionrift/gallery/ss5.jpg" 
+                    alt="Game Screenshot 5" 
+                    loading="lazy"
+                  />
+                </div>
               </div>
+            </div>
+            
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+              <span class="close-btn" onclick="event.stopPropagation()">&times;</span>
+              <img class="lightbox-content" id="lightbox-img" alt="">
+              <div id="lightbox-caption" class="lightbox-caption"></div>
             </div>
           </div>
         </section>
       </div>
     </main>
 
+    <style>
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      @media (min-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .gallery-item {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.02);
+      }
+
+      /* Lightbox styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
+
+      .lightbox-caption {
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .close-btn:hover {
+        color: #ccc;
+      }
+    </style>
+
     <footer>Copyright © 2025 AstralSeal.</footer>
 
     <script is:inline>
+      // Lightbox functions
+      function openLightbox(src, alt) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const caption = document.getElementById('lightbox-caption');
+        
+        lightbox.style.display = 'flex';
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        caption.textContent = alt;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close lightbox when pressing Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+
+      // Close lightbox when clicking outside the image
+      document.getElementById('lightbox').addEventListener('click', function(event) {
+        if (event.target === this) {
+          closeLightbox();
+        }
+      });
+
       // Language Switcher
       document.addEventListener("DOMContentLoaded", function () {
         const languageButton = document.querySelector(".language-button");
