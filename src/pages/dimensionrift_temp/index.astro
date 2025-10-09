@@ -44,7 +44,42 @@
       }
       img {
         max-width: 100%;
+        height: auto;
         display: block;
+        margin: 0 auto;
+      }
+      
+      /* Responsive images in content */
+      .card img:not(.gallery-item img) {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      
+      /* Character images */
+      .char img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+      }
+      
+      /* Gallery images */
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        transition: transform 0.3s ease;
+      }
+      
+      .gallery-item:hover img {
+        transform: scale(1.02);
+      }
+      
+      /* Cover image */
+      .cover img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
       }
       a {
         color: inherit;
@@ -152,7 +187,20 @@
       /* Mobile Menu */
       @media (max-width: 900px) {
         .mobile-menu-toggle {
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          border: none;
+          color: white;
+          font-size: 1.5rem;
+          cursor: pointer;
+          z-index: 1001;
+          padding: 0;
+          margin-right: 10px;
         }
 
         .nav {
@@ -166,7 +214,9 @@
           padding: 80px 20px 20px;
           margin: 0;
           box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-          transition: right 0.3s ease;
+          transition: right 0.3s ease-in-out;
+          z-index: 1000;
+          overflow-y: auto;
         }
 
         .nav.active {
@@ -178,12 +228,35 @@
           border-radius: 8px;
           margin: 4px 0;
           background: rgba(255, 255, 255, 0.05);
+          display: block;
+          transition: background-color 0.2s ease;
+        }
+        
+        .nav a:hover {
+          background: rgba(255, 255, 255, 0.1);
         }
 
         .search {
           order: 0;
           width: 100%;
-          margin: 10px 0;
+          margin: 15px 0;
+          padding: 0 10px;
+        }
+        
+        /* Overlay when menu is open */
+        .nav-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+        
+        .nav.active + .nav-overlay {
+          display: block;
         }
       }
 
@@ -688,9 +761,10 @@
     <!-- Top Bar -->
     <header class="topbar" role="banner">
       <div class="topbar-inner">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu(event)" aria-expanded="false" aria-controls="main-navigation">
           <i class="fas fa-bars"></i>
         </button>
+        <div class="nav-overlay" onclick="toggleMobileMenu()"></div>
         <a href="/" class="logo" aria-label="Home" style="padding: 4px 0;">
           <img
             src="/images/dimensionrift/logo_navbar.png"
@@ -698,7 +772,7 @@
             style="height: 50px; width: auto; display: block;"
           />
         </a>
-        <nav class="nav" aria-label="Primary">
+        <nav class="nav" id="main-navigation" aria-label="Primary">
           <a href="#">Home</a>
           <a href="https://patch.astralseal.com">Download</a>
           <a href="https://facebook.com/AstralSeal">Support</a>
@@ -893,7 +967,7 @@
                 <img
                   src="/images/dimensionrift/library_header_2x.jpg"
                   alt="Dimension Rift"
-                  style="height: 400px; width: auto; display: block;"
+                  style="height: auto; width: 100%; display: block;"
                 />
               </div>
               <br />
@@ -1152,6 +1226,27 @@
     </main>
 
     <style>
+      /* Responsive images */
+      @media (max-width: 768px) {
+        .char img, 
+        .gallery-item img,
+        .cover img {
+          max-width: 100%;
+          height: auto;
+        }
+        
+        /* Adjust character grid on mobile */
+        .char {
+          margin-bottom: 20px;
+        }
+        
+        /* Adjust gallery grid on mobile */
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+        }
+      }
+      
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -1250,39 +1345,85 @@
     </style>
 
     <script is:inline>
+      // Mobile menu toggle
+      function toggleMobileMenu(event) {
+        if (event) {
+          event.stopPropagation();
+          event.preventDefault();
+        }
+        
+        const nav = document.querySelector('.nav');
+        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+        const isOpen = nav.classList.contains('active');
+        
+        // Toggle menu state
+        nav.classList.toggle('active');
+        document.body.style.overflow = !isOpen ? 'hidden' : '';
+        
+        // Update aria-expanded attribute
+        toggleBtn.setAttribute('aria-expanded', !isOpen);
+        
+        // Change icon
+        const icon = toggleBtn.querySelector('i');
+        if (!isOpen) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+
       // Lightbox functions
-      function openLightbox(src, alt) {
+      function openLightbox(src, caption = '') {
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const caption = document.getElementById('lightbox-caption');
+        const lightboxCaption = document.getElementById('lightbox-caption');
         
-        lightbox.style.display = 'flex';
-        lightboxImg.src = src;
-        lightboxImg.alt = alt;
-        caption.textContent = alt;
-        document.body.style.overflow = 'hidden';
+        if (lightbox && lightboxImg) {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = src;
+          lightboxImg.alt = caption;
+          
+          if (lightboxCaption && caption) {
+            lightboxCaption.textContent = caption;
+            lightboxCaption.style.display = 'block';
+          } else if (lightboxCaption) {
+            lightboxCaption.style.display = 'none';
+          }
+          
+          document.body.style.overflow = 'hidden';
+        }
       }
-
+      
       function closeLightbox(event) {
         if (event) {
-          event.preventDefault();
           event.stopPropagation();
         }
-        document.getElementById('lightbox').style.display = 'none';
-        document.body.style.overflow = ''; // Re-enable scrolling
-      }
-
-      // Close lightbox when pressing Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-          closeLightbox(event);
+        
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = '';
         }
-      });
-
-      // Close lightbox when clicking outside the image
-      document.getElementById('lightbox').addEventListener('click', function(event) {
-        if (event.target === this) {
-          closeLightbox();
+      }
+      
+      // Close lightbox when clicking outside the image or on the close button
+      document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+          lightbox.addEventListener('click', function(event) {
+            if (event.target === this || event.target.classList.contains('close-btn')) {
+              closeLightbox(event);
+            }
+          });
+          
+          // Close with Escape key
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && lightbox.style.display === 'flex') {
+              closeLightbox(event);
+            }
+          });
         }
       });
 
