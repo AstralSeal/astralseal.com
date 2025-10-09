@@ -1141,8 +1141,8 @@
             </div>
             
             <!-- Lightbox -->
-            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-              <span class="close-btn" onclick="event.stopPropagation()">&times;</span>
+            <div id="lightbox" class="lightbox">
+              <button class="close-btn" onclick="closeLightbox(event)" aria-label="Close lightbox">&times;</button>
               <img class="lightbox-content" id="lightbox-img" alt="">
               <div id="lightbox-caption" class="lightbox-caption"></div>
             </div>
@@ -1228,12 +1228,20 @@
       .close-btn {
         position: absolute;
         top: 20px;
-        right: 30px;
+        right: 20px;
         color: white;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bold;
         cursor: pointer;
         z-index: 1001;
+        background: none;
+        border: none;
+        padding: 0 10px;
+        line-height: 1;
+      }
+      .close-btn:focus {
+        outline: 2px solid #fff;
+        border-radius: 4px;
       }
 
       .close-btn:hover {
@@ -1241,39 +1249,7 @@
       }
     </style>
 
-    <footer>Copyright © 2025 AstralSeal.</footer>
-
     <script is:inline>
-      // Mobile menu toggle
-      function toggleMobileMenu() {
-        const nav = document.querySelector('.nav');
-        const toggleBtn = document.querySelector('.mobile-menu-toggle');
-        nav.classList.toggle('active');
-        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        
-        // Change icon
-        const icon = toggleBtn.querySelector('i');
-        if (nav.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      }
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        const nav = document.querySelector('.nav');
-        const toggleBtn = document.querySelector('.mobile-menu-toggle');
-        
-        if (nav.classList.contains('active') && 
-            !nav.contains(event.target) && 
-            !toggleBtn.contains(event.target)) {
-          toggleMobileMenu();
-        }
-      });
-
       // Lightbox functions
       function openLightbox(src, alt) {
         const lightbox = document.getElementById('lightbox');
@@ -1287,15 +1263,19 @@
         document.body.style.overflow = 'hidden';
       }
 
-      function closeLightbox() {
+      function closeLightbox(event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
         document.getElementById('lightbox').style.display = 'none';
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = ''; // Re-enable scrolling
       }
 
       // Close lightbox when pressing Escape key
       document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
-          closeLightbox();
+          closeLightbox(event);
         }
       });
 
@@ -1371,5 +1351,22 @@
         });
       });
     </script>
+
+    <footer style="
+      background: #1e3a8a;
+      color: #e8eeff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    ">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px;">
+        <p style="margin: 0;">© 2025 AstralSeal. All rights reserved.</p>
+        <p style="margin: 8px 0 0; opacity: 0.8; font-size: 0.9em;">
+          The Universe Belongs to the Seal!
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
