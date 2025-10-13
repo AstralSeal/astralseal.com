@@ -1226,6 +1226,22 @@
     </main>
 
     <style>
+      /* Responsive columns */
+      @media (max-width: 768px) {
+        .grid {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .grid > section {
+          order: -1; /* Move main content (right column) to the top on mobile */
+        }
+        
+        .grid > aside {
+          order: 1; /* Move sidebar (left column) to the bottom on mobile */
+        }
+      }
+      
       /* Responsive images */
       @media (max-width: 768px) {
         .char img, 
