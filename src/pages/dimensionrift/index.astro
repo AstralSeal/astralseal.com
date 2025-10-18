@@ -16,6 +16,7 @@
       content="chaos breaks loose when anime characters escape into the real world! Join forces with an top-tier otaku and the guardian of the anime world on a mission to find Edith, a magical pen thatcan rewrite any story!"
     />
     <link href="/scripts/css/custom_dimensionrift.css" rel="stylesheet">
+    <script is:inline src="/scripts/js/dimensionrift-lang.js"></script>
   </head>
   <body>
     <!-- Top Bar -->
@@ -585,38 +586,18 @@
         });
 
         // Handle language selection
-        languageOptions.forEach(function (option) {
+        languageOptions.forEach(function (option, index) {
           option.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
 
-            const lastSpan = this.querySelector("span:last-child");
-            const firstSpan = this.querySelector("span:first-child");
-            const checkIcon = this.querySelector("i.fa-check");
-
-            if (!lastSpan || !firstSpan || !checkIcon || !languageButton)
-              return;
-
-            const langText = lastSpan.textContent;
-            const flagClass = firstSpan.className;
-
-            // Update button text and flag
-            const buttonText = languageButton.querySelector("span");
-            const buttonIcon = languageButton.querySelector("i.fa-globe");
-
-            // Replace with flag icon
-            if (buttonIcon) buttonIcon.className = flagClass;
-            if (buttonText && langText) buttonText.textContent = langText;
-
-            // Update checkmarks
-            languageOptions.forEach(function (opt) {
-              const icon = opt.querySelector("i.fa-check");
-              if (icon) {
-                icon.style.display = "none";
-              }
-            });
-
-            checkIcon.style.display = "inline-block";
+            // Determine which language was selected (0 = English, 1 = Thai)
+            const selectedLang = index === 0 ? 'en' : 'th';
+            
+            // Switch language using the external function
+            if (typeof switchLanguage === 'function') {
+              switchLanguage(selectedLang);
+            }
 
             // Close dropdown
             languageDropdown.style.display = "none";
