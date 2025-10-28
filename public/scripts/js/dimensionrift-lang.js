@@ -185,11 +185,11 @@ const translations = {
     char_support_title: "ตัวละครสนับสนุน",
     
     // Lecia
-    char_lecia_name: "เลเซีย ฟอเรนเทียร์ เออร์เดีย มิราเนีย เดอ เอวาเลีย",
+    char_lecia_name: "ลีเซีย ฟอเรนเทียร์ เออร์เดีย มิราเนีย เดอ เอวาเลีย",
     char_lecia_desc: "ผู้พิทักษ์สมดุลของโลกอนิเมะที่ยังเยาว์วัย แม้จะมีตำแหน่งสูงส่งและความรับผิดชอบมากมาย แต่เธอก็ค่อนข้างเงอะงะเมื่อต้องเจอเทคโนโลยีของโลกมนุษย์ เธอถือครองปากกา \"เอดิธ\" ในตำนานที่สามารถเขียนเรื่องราวอนิเมะใหม่ได้",
     
     // Hime
-    char_hime_name: "ชิโรงาเนะ ฮิเมะ",
+    char_hime_name: "ชิโรกาเนะ ฮิเมะ",
     char_hime_desc: "อัจฉริยะด้าน IT และเพื่อนสมัยเด็กของยูกิ เธอเป็นสมองของปฏิบัติการจับตัวละครอนิเมะที่หนีออกมา แม้จะมีปากจัดและท่าทีจริงจัง แต่เธอก็ใส่ใจเพื่อนๆ อย่างลึกซึ้งและชอบเรื่องราวโรแมนติก",
     
     // Supporting Characters
@@ -239,7 +239,7 @@ function updateContent(lang) {
     if (icon) wishlistBtn.prepend(icon);
   }
 
-  const facebookBtn = document.querySelector('a[href*="facebook.com/astralseal"]');
+  const facebookBtn = document.querySelector('a[href*="facebook.com/AstralSeal2023"]');
   if (facebookBtn) {
     const icon = facebookBtn.querySelector('i');
     facebookBtn.textContent = t.btn_follow;
