@@ -17,6 +17,55 @@
     />
     <link href="/scripts/css/custom_dimensionrift.css" rel="stylesheet">
     <script is:inline src="/scripts/js/dimensionrift-lang.js"></script>
+    <style>
+      .vote-widget {
+        margin-top: 12px;
+        padding: 10px 12px;
+        border: 1px solid var(--line, rgba(148, 163, 184, 0.4));
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(241, 245, 249, 0.5);
+      }
+      .vote-button {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: none;
+        background: white;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
+        color: var(--mal-blue, #2e51a2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .vote-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+      }
+      .vote-button.voted {
+        transform: scale(1.05);
+      }
+      .vote-stats {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+      }
+      .vote-count {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .vote-label {
+        font-size: 0.8em;
+        color: var(--muted, #64748b);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+    </style>
   </head>
   <body>
     <!-- Top Bar -->
@@ -289,6 +338,15 @@
                     >
                       <i class="fas fa-search" style="margin-right: 6px;"></i>View Profile
                     </button>
+                    <div class="vote-widget" data-vote-character="lecia">
+                      <button type="button" class="vote-button" aria-label="Cheer for Lecia">
+                        <i class="fas fa-thumbs-up"></i>
+                      </button>
+                      <div class="vote-stats">
+                        <span class="vote-count" aria-live="polite">0</span>
+                        <span class="vote-label">Players cheered</span>
+                      </div>
+                    </div>
                   </div>
                 </article>
                 <article class="char">
@@ -313,6 +371,15 @@
                     >
                       <i class="fas fa-search" style="margin-right: 6px;"></i>View Profile
                     </button>
+                    <div class="vote-widget" data-vote-character="hime">
+                      <button type="button" class="vote-button" aria-label="Cheer for Hime">
+                        <i class="fas fa-thumbs-up"></i>
+                      </button>
+                      <div class="vote-stats">
+                        <span class="vote-count" aria-live="polite">0</span>
+                        <span class="vote-label">Players cheered</span>
+                      </div>
+                    </div>
                   </div>
                 </article>
               </div>
@@ -618,6 +685,32 @@
 
             // Close dropdown
             languageDropdown.style.display = "none";
+          });
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const widgets = document.querySelectorAll('.vote-widget');
+        widgets.forEach(function (widget) {
+          const characterId = widget.getAttribute('data-vote-character');
+          const button = widget.querySelector('.vote-button');
+          const countElement = widget.querySelector('.vote-count');
+          if (!characterId || !button || !countElement) {
+            return;
+          }
+
+          const storageKey = `dimensionrift_vote_${characterId}`;
+          const currentCount = parseInt(localStorage.getItem(storageKey) || '0', 10);
+          countElement.textContent = currentCount.toLocaleString();
+
+          button.addEventListener('click', function () {
+            const updatedCount = parseInt(localStorage.getItem(storageKey) || '0', 10) + 1;
+            localStorage.setItem(storageKey, updatedCount.toString());
+            countElement.textContent = updatedCount.toLocaleString();
+            button.classList.add('voted');
+            setTimeout(function () {
+              button.classList.remove('voted');
+            }, 250);
           });
         });
       });
