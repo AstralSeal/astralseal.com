@@ -1,0 +1,61 @@
+---
+import ContentSection from "~/components/content-section.astro";
+
+const announcements = [
+    {
+        date: "2026-01-01",
+        content: "Happy New Year from AstralSeal!",
+    },
+    {
+        date: "2025-12-18",
+        content:
+            "Steam Winter Sale - Re:Fragment ~Absolute Ambition~ is 20% Off!",
+    },
+    {
+        date: "2025-08-23",
+        content:
+            "Offline event at Thailand International Game Showcase 2025. Siam Paragon.",
+    },
+    {
+        date: "2025-08-16",
+        content: "Steam page launched. Wishlist now!",
+    },
+    {
+        date: "2025-08-16",
+        content: "AstralSeal announce 4th project. Dimension Rift.",
+    },
+    {
+        date: "2025-06-30",
+        content: "Re:Fragment ~Absolute Ambition~ artbook is on sale.",
+    },
+    {
+        date: "2025-02-21",
+        content:
+            "Re:Fragment ~Absolute Ambition~ full version is available on Steam.",
+    },
+    {
+        date: "2024-06-30",
+        content:
+            "AstralSeal announce 3rd project. Re:Fragment ~Absolute Ambition~.",
+    },
+];
+---
+
+<ContentSection title="Announcement" id="announcement">
+    <div
+        class="h-64 w-full max-w-4xl overflow-y-auto border-2 border-default bg-offset p-4"
+    >
+        <ul class="space-y-4">
+            {
+                announcements.map((item) => (
+                    <li class="flex flex-col gap-2 border-b border-default pb-2 last:border-0 last:pb-0 sm:flex-row sm:items-baseline sm:gap-4">
+                        <span class="shrink-0 font-mono text-primary">
+                            {item.date}
+                        </span>
+                        <span class="text-default">{item.content}</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</ContentSection>
