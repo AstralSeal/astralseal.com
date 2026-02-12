@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +18,7 @@
       name="description"
       content="chaos breaks loose when anime characters escape into the real world! Join forces with an top-tier otaku and the guardian of the anime world on a mission to find Edith, a magical pen thatcan rewrite any story!"
     />
-    <link href="/scripts/css/custom_dimensionrift.css" rel="stylesheet">
+    <link href="/scripts/css/custom_dimensionrift.css" rel="stylesheet" />
     <script is:inline src="/scripts/js/dimensionrift-lang.js"></script>
     <style>
       .vote-widget {
@@ -40,7 +43,9 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
       }
       .vote-button:hover {
         transform: translateY(-1px);
@@ -71,7 +76,13 @@
     <!-- Top Bar -->
     <header class="topbar" role="banner">
       <div class="topbar-inner">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu(event)" aria-expanded="false" aria-controls="main-navigation">
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Toggle menu"
+          onclick="toggleMobileMenu(event)"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
           <i class="fas fa-bars"></i>
         </button>
         <div class="nav-overlay" onclick="toggleMobileMenu()"></div>
@@ -197,27 +208,63 @@
           <div class="card card-pad" style="margin-top:12px">
             <h2 class="card-title" style="margin-bottom: 12px;">Languages</h2>
             <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+              <table
+                style="width: 100%; border-collapse: collapse; font-size: 0.9em;"
+              >
                 <thead>
                   <tr style="background-color: #f8fafc;">
-                    <th style="text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); min-width: 50px;"></th>
-                    <th style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;">Interface</th>
-                    <th style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;">Audio</th>
-                    <th style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;">Subtitles</th>
+                    <th
+                      style="text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); min-width: 50px;"
+                    ></th>
+                    <th
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;"
+                      >Interface</th
+                    >
+                    <th
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;"
+                      >Audio</th
+                    >
+                    <th
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); width: 70px;"
+                      >Subtitles</th
+                    >
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td style="padding: 8px 10px; border-bottom: 1px solid var(--line);">English</td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);">✓</td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line);"></td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);">✓</td>
+                    <td
+                      style="padding: 8px 10px; border-bottom: 1px solid var(--line);"
+                      >English</td
+                    >
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);"
+                      >✓</td
+                    >
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line);"
+                    ></td>
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);"
+                      >✓</td
+                    >
                   </tr>
                   <tr>
-                    <td style="padding: 8px 10px; border-bottom: 1px solid var(--line);">Thai</td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);">✓</td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);">✓</td>
-                    <td style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);">✓</td>
+                    <td
+                      style="padding: 8px 10px; border-bottom: 1px solid var(--line);"
+                      >Thai</td
+                    >
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);"
+                      >✓</td
+                    >
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);"
+                      >✓</td
+                    >
+                    <td
+                      style="text-align: center; padding: 8px 5px; border-bottom: 1px solid var(--line); color: var(--mal-blue);"
+                      >✓</td
+                    >
                   </tr>
                 </tbody>
               </table>
@@ -331,15 +378,20 @@
                       when it comes to human world technology. She wields the
                       legendary "Edith" pen, which can rewrite anime storylines.
                     </div>
-                    <button 
-                      class="btn" 
+                    <button
+                      class="btn"
                       style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
                       onclick="openLightbox('/images/dimensionrift/characters/lecia_detail.jpg', 'Lecia Forentier Erdiah Mirania de Evalia')"
                     >
-                      <i class="fas fa-search" style="margin-right: 6px;"></i>View Profile
+                      <i class="fas fa-search" style="margin-right: 6px;"
+                      ></i>View Profile
                     </button>
                     <div class="vote-widget" data-vote-character="lecia">
-                      <button type="button" class="vote-button" aria-label="Cheer for Lecia">
+                      <button
+                        type="button"
+                        class="vote-button"
+                        aria-label="Cheer for Lecia"
+                      >
                         <i class="fas fa-thumbs-up"></i>
                       </button>
                       <div class="vote-stats">
@@ -364,15 +416,20 @@
                       attitude, she cares deeply for her friends and has a soft
                       spot for romantic stories.
                     </div>
-                    <button 
-                      class="btn" 
+                    <button
+                      class="btn"
                       style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
                       onclick="openLightbox('/images/dimensionrift/characters/hime_detail.jpg', 'Shirogane Hime')"
                     >
-                      <i class="fas fa-search" style="margin-right: 6px;"></i>View Profile
+                      <i class="fas fa-search" style="margin-right: 6px;"
+                      ></i>View Profile
                     </button>
                     <div class="vote-widget" data-vote-character="hime">
-                      <button type="button" class="vote-button" aria-label="Cheer for Hime">
+                      <button
+                        type="button"
+                        class="vote-button"
+                        aria-label="Cheer for Hime"
+                      >
                         <i class="fas fa-thumbs-up"></i>
                       </button>
                       <div class="vote-stats">
@@ -384,76 +441,82 @@
                 </article>
               </div>
 
-                <h2 class="card-title" id="supportCharacters" style="margin-top: 0;">
-                  Supporting Characters
-                </h2>
-                <div class="char-grid" id="charGrid">
-                  <article class="char">
-                    <img
-                      alt="Character"
-                      src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
-                    />
-                    <div>
-                      <div class="name">Sub Character A</div>
-                      <div class="role">CV: John Doe</div>
-                    </div>
-                  </article>
-                  <article class="char">
-                    <img
-                      alt="Character"
-                      src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
-                    />
-                    <div>
-                      <div class="name">Sub Character B</div>
-                      <div class="role">CV: John Doe</div>
-                    </div>
-                  </article>
-                  <article class="char">
-                    <img
-                      alt="Character"
-                      src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
-                    />
-                    <div>
-                      <div class="name">Sub Character C</div>
-                      <div class="role">CV: John Doe</div>
-                    </div>
-                  </article>
-                  <article class="char">
-                    <img
-                      alt="Character"
-                      src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
-                    />
-                    <div>
-                      <div class="name">Sub Character D</div>
-                      <div class="role">CV: John Doe</div>
-                    </div>
-                  </article>
+              <h2
+                class="card-title"
+                id="supportCharacters"
+                style="margin-top: 0;"
+              >
+                Supporting Characters
+              </h2>
+              <div class="char-grid" id="charGrid">
+                <article class="char">
+                  <img
+                    alt="Character"
+                    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
+                  />
+                  <div>
+                    <div class="name">Sub Character A</div>
+                    <div class="role">CV: John Doe</div>
+                  </div>
+                </article>
+                <article class="char">
+                  <img
+                    alt="Character"
+                    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
+                  />
+                  <div>
+                    <div class="name">Sub Character B</div>
+                    <div class="role">CV: John Doe</div>
+                  </div>
+                </article>
+                <article class="char">
+                  <img
+                    alt="Character"
+                    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
+                  />
+                  <div>
+                    <div class="name">Sub Character C</div>
+                    <div class="role">CV: John Doe</div>
+                  </div>
+                </article>
+                <article class="char">
+                  <img
+                    alt="Character"
+                    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect rx='16' width='128' height='128' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%239ca3af' font-size='12' font-family='Arial'%3EIMG%3C/text%3E%3C/svg%3E"
+                  />
+                  <div>
+                    <div class="name">Sub Character D</div>
+                    <div class="role">CV: John Doe</div>
+                  </div>
+                </article>
               </div>
             </div>
-              <div class="hr"></div>
+            <div class="hr"></div>
 
-              <h2 class="card-title">Development Team</h2>
-              <div class="staff-list">
-                <div class="staff-item">
-                  <span>Director</span><span class="staff-role">Rayedge</span>
-                </div>
-                <div class="staff-item">
-                  <span>Scenario Writer</span><span class="staff-role"
-                    >Woofy</span>
-                </div>
-                <div class="staff-item">
-                  <span>Artist/Character Design</span><span class="staff-role"
-                    >Rayedge / Woofy</span>
-                </div>
-                <div class="staff-item">
-                  <span>Programming</span><span class="staff-role"
-                    >AstralAria</span>
-                </div>
+            <h2 class="card-title">Development Team</h2>
+            <div class="staff-list">
+              <div class="staff-item">
+                <span>Director</span><span class="staff-role">Rayedge</span>
               </div>
+              <div class="staff-item">
+                <span>Scenario Writer</span><span class="staff-role">Woofy</span
+                >
+              </div>
+              <div class="staff-item">
+                <span>Artist/Character Design</span><span class="staff-role"
+                  >Rayedge / Woofy</span
+                >
+              </div>
+              <div class="staff-item">
+                <span>Programming</span><span class="staff-role"
+                  >AstralAria</span
+                >
+              </div>
+            </div>
 
-              <!-- <div class="hr"></div> -->
+            <!-- <div class="hr"></div> -->
 
-              <!--<h2 class="card-title">Announcement</h2>
+            <!--<h2 class="card-title">Announcement</h2>
               <div class="reco-grid">
                 <a class="reco" href="#">
                   <img
@@ -489,240 +552,308 @@
                   </div>
                 </a>
               </div> -->
-            </div>
+          </div>
 
-            <!-- Gallery Section -->
-            <div class="card card-pad" style="margin-top: 24px;">
-              <h2 class="card-title">Gallery</h2>
-              <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss1.jpg', 'Game Screenshot 1')">
-                  <img 
-                    src="/images/dimensionrift/gallery/ss1.jpg" 
-                    alt="Game Screenshot 1" 
-                    loading="lazy"
-                  />
-                </div>
-                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss2.jpg', 'Game Screenshot 2')">
-                  <img 
-                    src="/images/dimensionrift/gallery/ss2.jpg" 
-                    alt="Game Screenshot 2" 
-                    loading="lazy"
-                  />
-                </div>
-                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss3.jpg', 'Game Screenshot 3')">
-                  <img 
-                    src="/images/dimensionrift/gallery/ss3.jpg" 
-                    alt="Game Screenshot 3" 
-                    loading="lazy"
-                  />
-                </div>
-                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss4.jpg', 'Game Screenshot 4')">
-                  <img 
-                    src="/images/dimensionrift/gallery/ss4.jpg" 
-                    alt="Game Screenshot 4" 
-                    loading="lazy"
-                  />
-                </div>
-                <div class="gallery-item" onclick="openLightbox('/images/dimensionrift/gallery/ss5.jpg', 'Game Screenshot 5')">
-                  <img 
-                    src="/images/dimensionrift/gallery/ss5.jpg" 
-                    alt="Game Screenshot 5" 
-                    loading="lazy"
-                  />
-                </div>
+          <!-- Gallery Section -->
+          <div class="card card-pad" style="margin-top: 24px;">
+            <h2 class="card-title">Gallery</h2>
+            <div class="gallery-grid">
+              <div
+                class="gallery-item"
+                onclick="openLightbox('/images/dimensionrift/gallery/ss1.jpg', 'Game Screenshot 1')"
+              >
+                <img
+                  src="/images/dimensionrift/gallery/ss1.jpg"
+                  alt="Game Screenshot 1"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="gallery-item"
+                onclick="openLightbox('/images/dimensionrift/gallery/ss2.jpg', 'Game Screenshot 2')"
+              >
+                <img
+                  src="/images/dimensionrift/gallery/ss2.jpg"
+                  alt="Game Screenshot 2"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="gallery-item"
+                onclick="openLightbox('/images/dimensionrift/gallery/ss3.jpg', 'Game Screenshot 3')"
+              >
+                <img
+                  src="/images/dimensionrift/gallery/ss3.jpg"
+                  alt="Game Screenshot 3"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="gallery-item"
+                onclick="openLightbox('/images/dimensionrift/gallery/ss4.jpg', 'Game Screenshot 4')"
+              >
+                <img
+                  src="/images/dimensionrift/gallery/ss4.jpg"
+                  alt="Game Screenshot 4"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="gallery-item"
+                onclick="openLightbox('/images/dimensionrift/gallery/ss5.jpg', 'Game Screenshot 5')"
+              >
+                <img
+                  src="/images/dimensionrift/gallery/ss5.jpg"
+                  alt="Game Screenshot 5"
+                  loading="lazy"
+                />
               </div>
             </div>
-            
-            <!-- Announcement Section -->
-            <div class="card card-pad" style="margin-top: 24px;">
-              <h2 class="card-title">Announcement</h2>
-              <p style="margin: 0 0 12px 0;">
-                <span style="color: var(--muted); font-size: 0.9em;">2025-08-23</span> — 
-                Offline event at Thailand International Game Showcase 2025. Siam Paragon.
-              </p>
-              <p style="margin: 0 0 12px 0;">
-                <span style="color: var(--muted); font-size: 0.9em;">2025-08-16</span> — 
-                Steam page launched. <a href="https://store.steampowered.com/app/3930590/Dimension_Rift__Otaku_Save_The_World">Wishlist now!</a>
-              </p>
-              <p style="margin: 0;">
-                <span style="color: var(--muted); font-size: 0.9em;">2025-08-16</span> — 
-                AstralSeal announce 4th project. Dimension Rift.
-              </p>
-            </div>
-            
-            <!-- Lightbox -->
-            <div id="lightbox" class="lightbox">
-              <button class="close-btn" onclick="closeLightbox(event)" aria-label="Close lightbox">&times;</button>
-              <img class="lightbox-content" id="lightbox-img" alt="">
-              <div id="lightbox-caption" class="lightbox-caption"></div>
-            </div>
+          </div>
+
+          <!-- Announcement Section -->
+          <div class="card card-pad" style="margin-top: 24px;">
+            <h2 class="card-title">Announcement</h2>
+            <p style="margin: 0 0 12px 0;">
+              <span style="color: var(--muted); font-size: 0.9em;"
+                >2025-08-23</span
+              > — Offline event at Thailand International Game Showcase 2025. Siam
+              Paragon.
+            </p>
+            <p style="margin: 0 0 12px 0;">
+              <span style="color: var(--muted); font-size: 0.9em;"
+                >2025-08-16</span
+              > — Steam page launched. <a
+                href="https://store.steampowered.com/app/3930590/Dimension_Rift__Otaku_Save_The_World"
+                >Wishlist now!</a
+              >
+            </p>
+            <p style="margin: 0;">
+              <span style="color: var(--muted); font-size: 0.9em;"
+                >2025-08-16</span
+              > — AstralSeal announce 4th project. Dimension Rift.
+            </p>
+          </div>
+
+          <!-- Lightbox -->
+          <div id="lightbox" class="lightbox">
+            <button
+              class="close-btn"
+              onclick="closeLightbox(event)"
+              aria-label="Close lightbox">&times;</button
+            >
+            <img class="lightbox-content" id="lightbox-img" alt="" />
+            <div id="lightbox-caption" class="lightbox-caption"></div>
           </div>
         </section>
       </div>
     </main>
+  </body>
 
-    <script is:inline>
-      // Mobile menu toggle
-      function toggleMobileMenu(event) {
-        if (event) {
-          event.stopPropagation();
-          event.preventDefault();
-        }
-        
-        const nav = document.querySelector('.nav');
-        const toggleBtn = document.querySelector('.mobile-menu-toggle');
-        const isOpen = nav.classList.contains('active');
-        
-        // Toggle menu state
-        nav.classList.toggle('active');
-        document.body.style.overflow = !isOpen ? 'hidden' : '';
-        
-        // Update aria-expanded attribute
-        toggleBtn.setAttribute('aria-expanded', !isOpen);
-        
-        // Change icon
-        const icon = toggleBtn.querySelector('i');
-        if (!isOpen) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+  <script is:inline>
+    // Mobile menu toggle
+    function toggleMobileMenu(event) {
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
       }
 
-      // Lightbox functions
-      function openLightbox(src, caption = '') {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        
-        if (lightbox && lightboxImg) {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = src;
-          lightboxImg.alt = caption;
-          
-          if (lightboxCaption && caption) {
-            lightboxCaption.textContent = caption;
-            lightboxCaption.style.display = 'block';
-          } else if (lightboxCaption) {
-            lightboxCaption.style.display = 'none';
+      const nav = document.querySelector(".nav");
+      const toggleBtn = document.querySelector(".mobile-menu-toggle");
+      const isOpen = nav.classList.contains("active");
+
+      // Toggle menu state
+      nav.classList.toggle("active");
+      document.body.style.overflow = !isOpen ? "hidden" : "";
+
+      // Update aria-expanded attribute
+      toggleBtn.setAttribute("aria-expanded", !isOpen);
+
+      // Change icon
+      const icon = toggleBtn.querySelector("i");
+      if (!isOpen) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    }
+
+    // Lightbox functions
+    function openLightbox(src, caption = "") {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+
+      if (lightbox && lightboxImg) {
+        lightbox.style.display = "flex";
+        lightboxImg.src = src;
+        lightboxImg.alt = caption;
+
+        if (lightboxCaption && caption) {
+          lightboxCaption.textContent = caption;
+          lightboxCaption.style.display = "block";
+        } else if (lightboxCaption) {
+          lightboxCaption.style.display = "none";
+        }
+
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    function closeLightbox(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+
+      const lightbox = document.getElementById("lightbox");
+      if (lightbox) {
+        lightbox.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    }
+
+    // Close lightbox when clicking outside the image or on the close button
+    document.addEventListener("DOMContentLoaded", function () {
+      const lightbox = document.getElementById("lightbox");
+      if (lightbox) {
+        lightbox.addEventListener("click", function (event) {
+          if (
+            event.target === this ||
+            event.target.classList.contains("close-btn")
+          ) {
+            closeLightbox(event);
           }
-          
-          document.body.style.overflow = 'hidden';
-        }
-      }
-      
-      function closeLightbox(event) {
-        if (event) {
-          event.stopPropagation();
-        }
-        
-        const lightbox = document.getElementById('lightbox');
-        if (lightbox) {
-          lightbox.style.display = 'none';
-          document.body.style.overflow = '';
-        }
-      }
-      
-      // Close lightbox when clicking outside the image or on the close button
-      document.addEventListener('DOMContentLoaded', function() {
-        const lightbox = document.getElementById('lightbox');
-        if (lightbox) {
-          lightbox.addEventListener('click', function(event) {
-            if (event.target === this || event.target.classList.contains('close-btn')) {
-              closeLightbox(event);
-            }
-          });
-          
-          // Close with Escape key
-          document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && lightbox.style.display === 'flex') {
-              closeLightbox(event);
-            }
-          });
-        }
-      });
-
-      // Language Switcher
-      document.addEventListener("DOMContentLoaded", function () {
-        const languageButton = document.querySelector(".language-button");
-        const languageDropdown = document.querySelector(".language-dropdown");
-        const languageOptions = document.querySelectorAll(".language-option");
-
-        if (!languageButton || !languageDropdown) return;
-
-        // Toggle dropdown
-        languageButton.addEventListener("click", function (e) {
-          e.stopPropagation();
-          const isOpen = languageDropdown.style.display === "block";
-          languageDropdown.style.display = isOpen ? "none" : "block";
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener("click", function () {
+        // Close with Escape key
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && lightbox.style.display === "flex") {
+            closeLightbox(event);
+          }
+        });
+      }
+    });
+
+    // Language Switcher
+    document.addEventListener("DOMContentLoaded", function () {
+      const languageButton = document.querySelector(".language-button");
+      const languageDropdown = document.querySelector(".language-dropdown");
+      const languageOptions = document.querySelectorAll(".language-option");
+
+      if (!languageButton || !languageDropdown) return;
+
+      // Toggle dropdown
+      languageButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const isOpen = languageDropdown.style.display === "block";
+        languageDropdown.style.display = isOpen ? "none" : "block";
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function () {
+        languageDropdown.style.display = "none";
+      });
+
+      // Prevent dropdown from closing when clicking inside it
+      languageDropdown.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
+      // Handle language selection
+      languageOptions.forEach(function (option, index) {
+        option.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Determine which language was selected (0 = English, 1 = Thai)
+          const selectedLang = index === 0 ? "en" : "th";
+
+          // Switch language using the external function
+          if (typeof switchLanguage === "function") {
+            switchLanguage(selectedLang);
+          }
+
+          // Close dropdown
           languageDropdown.style.display = "none";
         });
-
-        // Prevent dropdown from closing when clicking inside it
-        languageDropdown.addEventListener("click", function (e) {
-          e.stopPropagation();
-        });
-
-        // Handle language selection
-        languageOptions.forEach(function (option, index) {
-          option.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            // Determine which language was selected (0 = English, 1 = Thai)
-            const selectedLang = index === 0 ? 'en' : 'th';
-            
-            // Switch language using the external function
-            if (typeof switchLanguage === 'function') {
-              switchLanguage(selectedLang);
-            }
-
-            // Close dropdown
-            languageDropdown.style.display = "none";
-          });
-        });
       });
+    });
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const widgets = document.querySelectorAll('.vote-widget');
-        widgets.forEach(function (widget) {
-          const characterId = widget.getAttribute('data-vote-character');
-          const button = widget.querySelector('.vote-button');
-          const countElement = widget.querySelector('.vote-count');
-          if (!characterId || !button || !countElement) {
-            return;
+    document.addEventListener("DOMContentLoaded", function () {
+      const API_BASE = "https://astralseal-llm.vercel.app/api/voting";
+      const API_KEY = "astralseal_2026";
+
+      // Fetch initial vote counts
+      fetch(`${API_BASE}/results`, {
+        headers: { "X-API-Key": API_KEY },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success && Array.isArray(data.results)) {
+            data.results.forEach((character) => {
+              const widget = document.querySelector(
+                `.vote-widget[data-vote-character="${character.id}"]`,
+              );
+              if (widget) {
+                const countElement = widget.querySelector(".vote-count");
+                if (countElement) {
+                  countElement.textContent = character.votes.toLocaleString();
+                }
+              }
+            });
           }
+        })
+        .catch((error) => console.error("Error fetching votes:", error));
 
-          const storageKey = `dimensionrift_vote_${characterId}`;
-          const currentCount = parseInt(localStorage.getItem(storageKey) || '0', 10);
-          countElement.textContent = currentCount.toLocaleString();
+      const widgets = document.querySelectorAll(".vote-widget");
+      widgets.forEach(function (widget) {
+        const characterId = widget.getAttribute("data-vote-character");
+        const button = widget.querySelector(".vote-button");
+        const countElement = widget.querySelector(".vote-count");
+        if (!characterId || !button || !countElement) {
+          return;
+        }
 
-          button.addEventListener('click', function () {
-            const updatedCount = parseInt(localStorage.getItem(storageKey) || '0', 10) + 1;
-            localStorage.setItem(storageKey, updatedCount.toString());
-            countElement.textContent = updatedCount.toLocaleString();
-            button.classList.add('voted');
-            setTimeout(function () {
-              button.classList.remove('voted');
-            }, 250);
-          });
+        button.addEventListener("click", function () {
+          // Prevent double clicking
+          if (button.disabled) return;
+          button.disabled = true;
+
+          fetch(`${API_BASE}/vote`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-API-Key": API_KEY,
+            },
+            body: JSON.stringify({ characterId: characterId }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success && data.character) {
+                countElement.textContent =
+                  data.character.votes.toLocaleString();
+                button.classList.add("voted");
+                // Optional: Trigger confetti or other effects here
+              }
+            })
+            .catch((error) => console.error("Error submitting vote:", error))
+            .finally(() => {
+              setTimeout(function () {
+                button.classList.remove("voted");
+                button.disabled = false;
+              }, 250);
+            });
         });
       });
-    </script>
+    });
+  </script>
 
-    <footer>
-      <div class="footer-container">
-        <p class="footer-copyright">© 2026 AstralSeal. All rights reserved.</p>
-        <p class="footer-tagline">
-          The Universe Belongs to the Seal!
-        </p>
-      </div>
-    </footer>
-  </body>
+  <footer>
+    <div class="footer-container">
+      <p class="footer-copyright">© 2026 AstralSeal. All rights reserved.</p>
+      <p class="footer-tagline">The Universe Belongs to the Seal!</p>
+    </div>
+  </footer>
 </html>
