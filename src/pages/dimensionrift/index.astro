@@ -782,16 +782,13 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-      const API_BASE = "https://astralseal-llm.vercel.app/api/voting";
-      const API_KEY = "astralseal_2026";
+      const API_BASE = "/api/vote";
 
       // Fetch initial vote counts
-      fetch(`${API_BASE}/results`, {
-        headers: { "X-API-Key": API_KEY },
-      })
+      fetch(`${API_BASE}/results`)
         .then((response) => response.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.results)) {
+          if (data.results && Array.isArray(data.results)) {
             data.results.forEach((character) => {
               const widget = document.querySelector(
                 `.vote-widget[data-vote-character="${character.id}"]`,
@@ -825,7 +822,6 @@
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "X-API-Key": API_KEY,
             },
             body: JSON.stringify({ characterId: characterId }),
           })
