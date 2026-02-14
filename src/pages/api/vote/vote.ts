@@ -2,8 +2,9 @@ export const prerender = false;
 
 import type { APIRoute } from 'astro';
 
-export const POST: APIRoute = async ({ request }) => {
-    const API_KEY = import.meta.env.ASTRAL_API_KEY;
+export const POST: APIRoute = async (context) => {
+    const API_KEY = context.locals.runtime?.env.ASTRAL_API_KEY || import.meta.env.ASTRAL_API_KEY;
+    const request = context.request;
     const API_BASE = 'https://astralseal-llm.vercel.app/api/voting';
 
     try {
