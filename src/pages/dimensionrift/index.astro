@@ -384,311 +384,326 @@
               <div class="hr"></div>
 
               <h2 class="card-title" id="mainCharacters">Main Characters</h2>
-              <div class="char-grid" id="charGrid">
-                <article class="char">
-                  <img
-                    alt="Lecia"
-                    src="/images/dimensionrift/characters/lecia_profile.jpg"
-                  />
-                  <div>
-                    <div class="name">
-                      Lecia Forentier Erdiah Mirania de Evalia
-                    </div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">
-                      The young guardian of the anime world's balance. Despite
-                      her noble title and responsibilities, she's quite clumsy
-                      when it comes to human world technology. She wields the
-                      legendary "Edith" pen, which can rewrite anime storylines.
-                    </div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/lecia_detail.jpg', 'Lecia Forentier Erdiah Mirania de Evalia')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="lecia">
+              <div class="carousel-wrapper" style="position: relative;">
+                <button
+                  class="carousel-btn prev"
+                  aria-label="Previous character"
+                  onclick="scrollCarousel(-1)"
+                  ><i class="fas fa-chevron-left"></i></button
+                >
+                <button
+                  class="carousel-btn next"
+                  aria-label="Next character"
+                  onclick="scrollCarousel(1)"
+                  ><i class="fas fa-chevron-right"></i></button
+                >
+                <div class="char-grid carousel" id="charGrid">
+                  <article class="char">
+                    <img
+                      alt="Lecia"
+                      src="/images/dimensionrift/characters/lecia_profile.jpg"
+                    />
+                    <div>
+                      <div class="name">
+                        Lecia Forentier Erdiah Mirania de Evalia
+                      </div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">
+                        The young guardian of the anime world's balance. Despite
+                        her noble title and responsibilities, she's quite clumsy
+                        when it comes to human world technology. She wields the
+                        legendary "Edith" pen, which can rewrite anime
+                        storylines.
+                      </div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Lecia"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/lecia_detail.jpg', 'Lecia Forentier Erdiah Mirania de Evalia')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="lecia">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Lecia"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Hime"
-                    src="/images/dimensionrift/characters/hime_profile.png"
-                  />
-                  <div>
-                    <div class="name">Shirogane Hime</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">
-                      A genius IT specialist and Yuki's childhood friend. She's
-                      the brains behind the operation to capture the escaped
-                      anime characters. Despite her sharp tongue and no-nonsense
-                      attitude, she cares deeply for her friends and has a soft
-                      spot for romantic stories.
-                    </div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/hime_detail.jpg', 'Shirogane Hime')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="hime">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Hime"
+                      src="/images/dimensionrift/characters/hime_profile.png"
+                    />
+                    <div>
+                      <div class="name">Shirogane Hime</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">
+                        A genius IT specialist and Yuki's childhood friend.
+                        She's the brains behind the operation to capture the
+                        escaped anime characters. Despite her sharp tongue and
+                        no-nonsense attitude, she cares deeply for her friends
+                        and has a soft spot for romantic stories.
+                      </div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Hime"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/hime_detail.jpg', 'Shirogane Hime')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="hime">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Hime"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Mikuru"
-                    src="/images/dimensionrift/characters/mikuru_profile.png"
-                  />
-                  <div>
-                    <div class="name">Mikuru</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/mikuru_detail.PNG', 'Mikuru')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="mikuru">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Mikuru"
+                      src="/images/dimensionrift/characters/mikuru_profile.png"
+                    />
+                    <div>
+                      <div class="name">Mikuru</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Mikuru"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/mikuru_detail.PNG', 'Mikuru')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="mikuru">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Mikuru"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Kyouko"
-                    src="/images/dimensionrift/characters/kyouko_profile.png"
-                  />
-                  <div>
-                    <div class="name">Kyouko</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/kyouko_detail.PNG', 'Kyouko')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="kyouko">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Kyouko"
+                      src="/images/dimensionrift/characters/kyouko_profile.png"
+                    />
+                    <div>
+                      <div class="name">Kyouko</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Kyouko"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/kyouko_detail.PNG', 'Kyouko')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="kyouko">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Kyouko"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Nightmare"
-                    src="/images/dimensionrift/characters/nightmare_profile.png"
-                  />
-                  <div>
-                    <div class="name">Nightmare</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/nightmare_detail.PNG', 'Nightmare')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="nightmare">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Nightmare"
+                      src="/images/dimensionrift/characters/nightmare_profile.png"
+                    />
+                    <div>
+                      <div class="name">Nightmare</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Nightmare"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/nightmare_detail.PNG', 'Nightmare')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="nightmare">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Nightmare"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Aria"
-                    src="/images/dimensionrift/characters/aria_profile.png"
-                  />
-                  <div>
-                    <div class="name">Aria</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/aria_detail.JPG', 'Aria')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="aria">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Aria"
+                      src="/images/dimensionrift/characters/aria_profile.png"
+                    />
+                    <div>
+                      <div class="name">Aria</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Aria"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/aria_detail.JPG', 'Aria')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="aria">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Aria"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Sumire"
-                    src="/images/dimensionrift/characters/sumire_profile.png"
-                  />
-                  <div>
-                    <div class="name">Sumire</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/sumire_detail.PNG', 'Sumire')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="sumire">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Sumire"
+                      src="/images/dimensionrift/characters/sumire_profile.png"
+                    />
+                    <div>
+                      <div class="name">Sumire</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Sumire"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/sumire_detail.PNG', 'Sumire')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="sumire">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Sumire"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="Daiji"
-                    src="/images/dimensionrift/characters/daiji_profile.png"
-                  />
-                  <div>
-                    <div class="name">Daiji</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/daiji_detail.PNG', 'Daiji')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div class="vote-widget" data-vote-character="daiji">
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="Daiji"
+                      src="/images/dimensionrift/characters/daiji_profile.png"
+                    />
+                    <div>
+                      <div class="name">Daiji</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for Daiji"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/daiji_detail.PNG', 'Daiji')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div class="vote-widget" data-vote-character="daiji">
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for Daiji"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
-                <article class="char">
-                  <img
-                    alt="secret_character"
-                    src="/images/dimensionrift/characters/secretcharacter_profile.png"
-                  />
-                  <div>
-                    <div class="name">???</div>
-                    <div class="role">CV: ???</div>
-                    <div class="description">xxx</div>
-                    <button
-                      class="btn"
-                      style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
-                      onclick="openLightbox('/images/dimensionrift/characters/secretcharacter_detail.PNG', '???')"
-                    >
-                      <i class="fas fa-search" style="margin-right: 6px;"
-                      ></i>View Profile
-                    </button>
-                    <div
-                      class="vote-widget"
-                      data-vote-character="secret_character"
-                    >
+                  </article>
+                  <article class="char">
+                    <img
+                      alt="secret_character"
+                      src="/images/dimensionrift/characters/secretcharacter_profile.png"
+                    />
+                    <div>
+                      <div class="name">???</div>
+                      <div class="role">CV: ???</div>
+                      <div class="description">xxx</div>
                       <button
-                        type="button"
-                        class="vote-button"
-                        aria-label="Cheer for ???"
+                        class="btn"
+                        style="margin-top: 12px; width: 100%; background: var(--mal-blue); color: white; border: none;"
+                        onclick="openLightbox('/images/dimensionrift/characters/secretcharacter_detail.PNG', '???')"
                       >
-                        <i class="fas fa-thumbs-up"></i>
+                        <i class="fas fa-search" style="margin-right: 6px;"
+                        ></i>View Profile
                       </button>
-                      <div class="vote-stats">
-                        <span class="vote-count" aria-live="polite">0</span>
-                        <span class="vote-label">Players cheered</span>
+                      <div
+                        class="vote-widget"
+                        data-vote-character="secret_character"
+                      >
+                        <button
+                          type="button"
+                          class="vote-button"
+                          aria-label="Cheer for ???"
+                        >
+                          <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <div class="vote-stats">
+                          <span class="vote-count" aria-live="polite">0</span>
+                          <span class="vote-label">Players cheered</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </div>
               </div>
             </div>
 
@@ -792,6 +807,11 @@
           <!-- Announcement Section -->
           <div class="card card-pad" style="margin-top: 24px;">
             <h2 class="card-title">Announcement</h2>
+            <p style="margin: 0 0 12px 0;">
+              <span style="color: var(--muted); font-size: 0.9em;"
+                >2026-03-07</span
+              > — Offline event at Comic Square 9. Union Mall.
+            </p>
             <p style="margin: 0 0 12px 0;">
               <span style="color: var(--muted); font-size: 0.9em;"
                 >2025-08-23</span
@@ -1022,6 +1042,20 @@
         });
       });
     });
+    function scrollCarousel(dir) {
+      const carousel = document.getElementById("charGrid");
+      if (!carousel) return;
+
+      const charElements = carousel.querySelectorAll(".char");
+      if (charElements.length === 0) return;
+
+      // Calculate scroll amount based on character width + gap
+      const charWidth = charElements[0].offsetWidth;
+      const gap = 16;
+      const scrollAmount = charWidth + gap;
+
+      carousel.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
+    }
   </script>
 
   <footer>
