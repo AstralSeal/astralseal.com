@@ -1,0 +1,51 @@
+:root {
+  --accent-color: #a855f7;
+}
+
+:root {
+  --nav-hover-color: #a855f7;
+  --nav-dropdown-hover-color: #a855f7;
+}
+
+.mainstory {
+  font-size: 125%;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .img-responsive {
+    display: none;
+  }
+  .img-responsive.mobile {
+    display: block;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #0d0a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: 500px;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+dt {
+  margin-top: 8px;
+}
+
+.buttonrow {
+  margin-top: 1.25rem;
+}
