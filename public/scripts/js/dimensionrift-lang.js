@@ -293,7 +293,7 @@ function updateContent(lang) {
   if (langRows[1]) langRows[1].querySelector('td').textContent = t.lang_thai;
 
   // Update Disclaimer section
-  if (cardTitles[3]) cardTitles[3].textContent = t.disclaimer_title;
+  if (cardTitles[4]) cardTitles[4].textContent = t.disclaimer_title;
 
   const allPs = document.querySelectorAll('.card-pad p');
   for (let i = 0; i < allPs.length; i++) {
