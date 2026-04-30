@@ -107,6 +107,16 @@ const character = {
             </div>
             <br />
             <p>{character.description}</p>
+            <div class="hr"></div>
+            <div class="vote-widget" data-vote-character="kyouko" style="margin-top: 12px; padding: 10px 12px; border: 1px solid var(--line, rgba(148, 163, 184, 0.4)); border-radius: 14px; display: flex; align-items: center; gap: 12px; background: rgba(241, 245, 249, 0.5);">
+              <button type="button" class="vote-button" aria-label="Cheer for Kyouko" style="width: 42px; height: 42px; border-radius: 50%; border: none; background: white; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12); color: var(--mal-blue, #2e51a2); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+                <i class="fas fa-thumbs-up"></i>
+              </button>
+              <div class="vote-stats" style="display: flex; flex-direction: column; line-height: 1.2;">
+                <span class="vote-count" aria-live="polite" style="font-size: 1.1em; font-weight: 700; color: #0f172a;">0</span>
+                <span class="vote-label" style="font-size: 0.8em; color: var(--muted, #64748b); text-transform: uppercase; letter-spacing: 0.08em;">Players cheered</span>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -118,5 +128,65 @@ const character = {
         <p class="footer-tagline">The Universe Belongs to the Seal!</p>
       </div>
     </footer>
+    <script is:inline>
+      const API_BASE = "/api/vote";
+
+      // Fetch initial vote count
+      fetch(`${API_BASE}/results`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.results && Array.isArray(data.results)) {
+            data.results.forEach((character) => {
+              const widget = document.querySelector(
+                `.vote-widget[data-vote-character="${character.id}"]`,
+              );
+              if (widget) {
+                const countElement = widget.querySelector(".vote-count");
+                if (countElement) {
+                  countElement.textContent = character.votes.toLocaleString();
+                }
+              }
+            });
+          }
+        })
+        .catch((error) => console.error("Error fetching votes:", error));
+
+      // Handle vote button click
+      const widget = document.querySelector(".vote-widget");
+      if (widget) {
+        const button = widget.querySelector(".vote-button");
+        const countElement = widget.querySelector(".vote-count");
+        const characterId = widget.getAttribute("data-vote-character");
+
+        if (button && countElement && characterId) {
+          button.addEventListener("click", function () {
+            if (button.disabled) return;
+            button.disabled = true;
+
+            fetch(`${API_BASE}/vote`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ characterId: characterId }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success && data.character) {
+                  countElement.textContent = data.character.votes.toLocaleString();
+                  button.classList.add("voted");
+                }
+              })
+              .catch((error) => console.error("Error submitting vote:", error))
+              .finally(() => {
+                setTimeout(function () {
+                  button.classList.remove("voted");
+                  button.disabled = false;
+                }, 250);
+              });
+          });
+        }
+      }
+    </script>
   </body>
 </html>
