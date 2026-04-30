@@ -1,0 +1,122 @@
+---
+const character = {
+  name: "Kyouko",
+  cv: "Kuriimu",
+  profileImage: "/images/dimensionrift/characters/kyouko_profile.png",
+  detailImage: "/images/dimensionrift/characters/kyouko_detail.PNG",
+  description: "A bespectacled girl—polite, soft-spoken, and cute—embodying the perfect \"Megane-musume\" concept. She doesn't usually stand out, but she has the worst luck; constantly bumping into Yuki and being forced into joint activities, dragging her into chaotic situations against her will."
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Kyouko - Dimension Rift Characters</title>
+    <meta
+      name="description"
+      content={character.description}
+    />
+    <link href="/scripts/css/custom_dimensionrift.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header class="topbar" role="banner">
+      <div class="topbar-inner">
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Toggle menu"
+          onclick="toggleMobileMenu(event)"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-overlay" onclick="toggleMobileMenu()"></div>
+        <a href="/dimensionrift" class="logo" aria-label="Back to Dimension Rift" style="padding: 4px 0;">
+          <img
+            src="/images/dimensionrift/logo_navbar.png"
+            alt="Dimension Rift"
+            style="height: 50px; width: auto; display: block;"
+          />
+        </a>
+        <nav class="nav" id="main-navigation" aria-label="Primary">
+          <a href="/dimensionrift">Back to Main</a>
+          <a href="/dimensionrift#mainCharacters">All Characters</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+      <div class="grid">
+        <!-- Left Column -->
+        <aside aria-label="Sidebar">
+          <div class="card card-pad">
+            <div class="cover" aria-label="Character profile">
+              <img alt={character.name} src={character.profileImage} />
+            </div>
+            <div class="hr"></div>
+            <h2 class="card-title">Character Info</h2>
+            <table class="info-table">
+              <tr><th>Name</th><td>{character.name}</td></tr>
+              <tr><th>Voice Actor</th><td>{character.cv}</td></tr>
+            </table>
+            <div class="hr"></div>
+            <a
+              href="/dimensionrift#mainCharacters"
+              class="btn"
+              style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; width: 100%; background-color: #000; color: #fff; padding: 12px; font-weight: 600;"
+            >
+              <i class="fas fa-arrow-left" style="font-size: 1.2em;"></i>
+              Back to Characters
+            </a>
+          </div>
+        </aside>
+
+        <!-- Right Column -->
+        <section>
+          <div class="card card-pad">
+            <div class="titlebar">
+              <div>
+                <h1 class="title">{character.name}</h1>
+                <p class="subtitle">CV: {character.cv}</p>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <h2 class="card-title">Character Profile</h2>
+            <div class="cover" aria-label="Character detail">
+              <img
+                src={character.detailImage}
+                alt={character.name}
+                style="height: auto; width: 100%; display: block;"
+              />
+            </div>
+            <br />
+            <p>{character.description}</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p class="footer-copyright">© 2026 AstralSeal. All rights reserved.</p>
+        <p class="footer-tagline">The Universe Belongs to the Seal!</p>
+      </div>
+    </footer>
+  </body>
+</html>
