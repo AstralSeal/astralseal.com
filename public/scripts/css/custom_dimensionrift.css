@@ -1110,6 +1110,19 @@ footer {
   }
 }
 
+/* Hide elements on mobile only */
+@media (max-width: 980px) {
+  .titlebar,
+  .title,
+  .subtitle {
+    display: none;
+  }
+
+  .cover[aria-label="Header"] {
+    display: none;
+  }
+}
+
 /* Lightbox styles */
 .lightbox {
   display: none;
