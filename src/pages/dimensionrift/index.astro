@@ -404,17 +404,16 @@
                     be rewritten... by the pen Edith?
                   </p>
                 </div>
-                <button 
-                  id="read-more-btn" 
-                  onclick="toggleStory()"
-                  style="margin-top: 12px; padding: 8px 16px; background: var(--mal-blue, #2e51a2); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background-color 0.2s;"
-                  onmouseover="this.style.backgroundColor='#1e3d82'"
-                  onmouseout="this.style.backgroundColor='var(--mal-blue, #2e51a2)'"
-                >
-                  Read more
-                </button>
               </div>
-              <div class="hr"></div>
+              <button 
+                id="read-more-btn" 
+                onclick="toggleStory()"
+                style="margin-top: 12px; padding: 8px 16px; background: var(--mal-blue, #2e51a2); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background-color 0.2s;"
+                onmouseover="this.style.backgroundColor='#1e3d82'"
+                onmouseout="this.style.backgroundColor='var(--mal-blue, #2e51a2)'"
+              >
+                Read more
+              </button>
 
               <div id="features-section" style="display: none;">
               <h2 class="card-title">Features</h2>
@@ -871,15 +870,24 @@
       const storyExpanded = document.getElementById("story-expanded");
       const featuresSection = document.getElementById("features-section");
       const readMoreBtn = document.getElementById("read-more-btn");
+      const storyContent = document.getElementById("story-content");
       
       if (storyExpanded.style.display === "none") {
+        // Expand content
         storyExpanded.style.display = "block";
         featuresSection.style.display = "block";
         readMoreBtn.textContent = "Read less";
+        
+        // Move button to after Features section
+        featuresSection.parentNode.insertBefore(readMoreBtn, featuresSection.nextSibling);
       } else {
+        // Collapse content
         storyExpanded.style.display = "none";
         featuresSection.style.display = "none";
         readMoreBtn.textContent = "Read more";
+        
+        // Move button back to after Story content
+        storyContent.parentNode.insertBefore(readMoreBtn, storyContent.nextSibling);
       }
     }
   </script>
