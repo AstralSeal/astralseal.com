@@ -377,31 +377,46 @@
                 />
               </div>
               <br />
-              <p>
-                When "Edith," the mystical pen capable of rewriting the
-                storylines of anime worlds, is stolen, the real world faces
-                turmoil as dimensional rifts tear open, allowing anime
-                characters to spill into reality.
-              </p><br />
-              <p>
-                "Shimada Yuki," the story's protagonist—a legendary-class
-                otaku—must team up with "Lecia," the guardian of anime world
-                balance, to stop this chaos. However, capturing the escaped
-                characters proves far from simple, as they must deal with
-                countless mishaps and the quirky, troublesome personalities of
-                these characters that give Yuki such headaches he's forced to
-                seek help from "Shirogane Hime," a beautiful IT genius who
-                excels at everything—especially her sharp tongue.
-              </p><br />
-              <p>
-                What's worse is that the only way to send these displaced
-                characters back to their worlds is to "capture their hearts."
-                Will Yuki and his companions be able to win over all the
-                characters' hearts and protect both worlds? Or will everything
-                be rewritten... by the pen Edith?
-              </p>
+              <div id="story-content">
+                <p>
+                  When "Edith," the mystical pen capable of rewriting the
+                  storylines of anime worlds, is stolen, the real world faces
+                  turmoil as dimensional rifts tear open, allowing anime
+                  characters to spill into reality.
+                </p>
+                <div id="story-expanded" style="display: none;">
+                  <br />
+                  <p>
+                    "Shimada Yuki," the story's protagonist—a legendary-class
+                    otaku—must team up with "Lecia," the guardian of anime world
+                    balance, to stop this chaos. However, capturing the escaped
+                    characters proves far from simple, as they must deal with
+                    countless mishaps and the quirky, troublesome personalities of
+                    these characters that give Yuki such headaches he's forced to
+                    seek help from "Shirogane Hime," a beautiful IT genius who
+                    excels at everything—especially her sharp tongue.
+                  </p><br />
+                  <p>
+                    What's worse is that the only way to send these displaced
+                    characters back to their worlds is to "capture their hearts."
+                    Will Yuki and his companions be able to win over all the
+                    characters' hearts and protect both worlds? Or will everything
+                    be rewritten... by the pen Edith?
+                  </p>
+                </div>
+                <button 
+                  id="read-more-btn" 
+                  onclick="toggleStory()"
+                  style="margin-top: 12px; padding: 8px 16px; background: var(--mal-blue, #2e51a2); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background-color 0.2s;"
+                  onmouseover="this.style.backgroundColor='#1e3d82'"
+                  onmouseout="this.style.backgroundColor='var(--mal-blue, #2e51a2)'"
+                >
+                  Read more
+                </button>
+              </div>
               <div class="hr"></div>
 
+              <div id="features-section" style="display: none;">
               <h2 class="card-title">Features</h2>
               <p style="margin:0">
                 <ul>
@@ -415,6 +430,7 @@
                   <li>- Full Thai voice acting included</li>
                 </ul>
               </p>
+              </div>
 
               <div class="hr"></div>
 
@@ -849,6 +865,22 @@
       const scrollAmount = charWidth + gap;
 
       carousel.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
+    }
+
+    function toggleStory() {
+      const storyExpanded = document.getElementById("story-expanded");
+      const featuresSection = document.getElementById("features-section");
+      const readMoreBtn = document.getElementById("read-more-btn");
+      
+      if (storyExpanded.style.display === "none") {
+        storyExpanded.style.display = "block";
+        featuresSection.style.display = "block";
+        readMoreBtn.textContent = "Read less";
+      } else {
+        storyExpanded.style.display = "none";
+        featuresSection.style.display = "none";
+        readMoreBtn.textContent = "Read more";
+      }
     }
   </script>
 
