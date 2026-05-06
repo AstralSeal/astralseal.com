@@ -1177,3 +1177,143 @@ footer {
 .close-btn:hover {
   color: #ccc;
 }
+
+/* Mobile Characters Carousel */
+.characters-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Hide navigation buttons on desktop */
+.characters-carousel-btn {
+  display: none;
+}
+
+/* Mobile Characters Section - Square Cards with Horizontal Scroll */
+@media (max-width: 980px) {
+  .characters-carousel-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Show navigation buttons on mobile */
+  .characters-carousel-btn {
+    display: flex;
+  }
+  .characters-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 12px !important;
+    padding: 4px !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .characters-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .character-card {
+    flex: 0 0 calc(33.333% - 8px) !important;
+    min-width: calc(33.333% - 8px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 12px !important;
+    border: 1px solid var(--line, rgba(148, 163, 184, 0.2)) !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: background 0.2s !important;
+    scroll-snap-align: start !important;
+    aspect-ratio: 1 !important;
+  }
+  
+  .character-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 70% !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .character-card div {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .character-card div > div:first-child {
+    color: var(--mal-blue, #2e51a2) !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .character-card span {
+    color: var(--muted, #64748b) !important;
+    font-size: 0.75em !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-card {
+    flex: 0 0 calc(33.333% - 8px) !important;
+    min-width: calc(33.333% - 8px) !important;
+  }
+}
+
+/* Navigation buttons for characters carousel */
+.characters-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--mal-blue);
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.characters-carousel-btn:hover {
+  background: var(--mal-blue);
+  color: white;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.characters-carousel-btn.prev {
+  left: -18px;
+}
+
+.characters-carousel-btn.next {
+  right: -18px;
+}
+
+@media (max-width: 480px) {
+  .characters-carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .characters-carousel-btn.prev {
+    left: -16px;
+  }
+  
+  .characters-carousel-btn.next {
+    right: -16px;
+  }
+}

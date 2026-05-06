@@ -434,7 +434,11 @@
               <div class="hr"></div>
 
               <h2 class="card-title" id="mainCharacters">Characters & Voice Actors</h2>
-              <div class="characters-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+              <div class="characters-carousel-wrapper">
+                <button class="characters-carousel-btn prev" onclick="scrollCharacters('left')" aria-label="Scroll characters left">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="characters-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
                 <a href="/dimensionrift/characters/lecia" class="character-card" style="display: flex; align-items: center; gap: 16px; padding: 12px; border: 1px solid var(--line, rgba(148, 163, 184, 0.2)); border-radius: 8px; text-decoration: none; transition: background 0.2s; flex-direction: row;">
                   <img src="/images/dimensionrift/characters/lecia_profile.jpg" alt="Lecia" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;" />
                   <div style="flex: 1;">
@@ -498,6 +502,10 @@
                     <span style="color: var(--muted, #64748b); font-size: 0.9em;">CV: Furorin</span>
                   </div>
                 </a>
+                </div>
+                <button class="characters-carousel-btn next" onclick="scrollCharacters('right')" aria-label="Scroll characters right">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
               </div>
               <style>
                 @media (min-width: 768px) {
@@ -658,6 +666,22 @@
   </body>
 
   <script is:inline>
+    // Characters carousel scroll function
+    function scrollCharacters(direction) {
+      const grid = document.querySelector('.characters-grid');
+      if (!grid) return;
+      
+      const cardWidth = grid.querySelector('.character-card')?.offsetWidth || 0;
+      const gap = 12; // Same as CSS gap
+      const scrollAmount = cardWidth + gap;
+      
+      if (direction === 'left') {
+        grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else if (direction === 'right') {
+        grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
     // Mobile menu toggle
     function toggleMobileMenu(event) {
       if (event) {
